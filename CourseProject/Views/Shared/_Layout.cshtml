@@ -1,14 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Site Metas -->
     <title>StyleBarber - Bootstrap 4 Responsive HTML5 Template</title>
     <meta name="keywords" content="">
@@ -19,9 +16,10 @@
     <script src="~/js/map.js"></script>
     <script src="~/js/responsive-tabs.js"></script>
     <!-- Site Icons -->
+    <!-- jQuery UI CSS -->
+    <!-- jQuery UI library -->
     <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <!-- Site CSS -->
@@ -32,11 +30,17 @@
     <link rel="stylesheet" href="~/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/custom.css">
-
+    <!-- jQuery UI CSS -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 </head>
 <body class="barber_version">
     <header class="top-navbar">
@@ -87,5 +91,7 @@
         <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
     </div>
     @await RenderSectionAsync("Scripts", required: false)
+    <!-- Include jQuery and jQuery UI scripts -->
+
 </body>
 </html>

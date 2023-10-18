@@ -1,17 +1,19 @@
-﻿using CourseProject.Models;
+﻿using CourseProject.Data;
+using CourseProject.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using CourseProject.Models.Domain;
 
 namespace CourseProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+		private readonly CRUDContext crudContext;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+		public HomeController(CRUDContext crudContext)
+		{
+			this.crudContext = crudContext;
+		}
+
 
         public IActionResult Index()
         {
@@ -36,7 +38,36 @@ namespace CourseProject.Controllers
 			return View();
 		}
 
-
+		[HttpGet]
+		public IActionResult Add()
+		{
+			return View();
+		}
+		[HttpPost]
+		public async Task<IActionResult> Add(AddAppointmentViewModel addAppointmentRequest)
+		{
+			
+			if (ModelState.IsValid)
+			{
+				var appointment = new Appointement()
+				{
+					Id = Guid.NewGuid(),
+					FirstName = addAppointmentRequest.FirstName,
+					LastName = addAppointmentRequest.LastName,
+					Email = addAppointmentRequest.Email,
+					Phone = addAppointmentRequest.Phone,
+					DateOfBook = addAppointmentRequest.DateOfBook,
+					Description = addAppointmentRequest.Description,
+				};
+				await crudContext.Appointements.AddAsync(appointment);
+				await crudContext.SaveChangesAsync();
+				return View("Index");
+			}
+			else
+			{
+				return View(addAppointmentRequest); // Повертаємо вид із помилками валідації
+			}
+		}
 
 	}
 }
