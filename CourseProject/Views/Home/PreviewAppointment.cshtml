@@ -1,0 +1,39 @@
+﻿@model CourseProject.Models.UpdateAppointmentViewModel
+@{
+}
+<div class="container">
+    <div class="pb-1">
+<form method="post" action="PreviewAppointment" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">FirstName</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">LastName</label>
+        <input type="text" class="form-control" asp-for="LastName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email address</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Salary</label>
+        <input type="text" class="form-control" asp-for="Phone">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBook">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Department</label>
+        <input type="text" class="form-control" asp-for="Description">
+    </div>
+    <button type="submit" class="btn btn-primary">Підтвердити</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Home">Видалити</button>
+</form>
+    </div>
+</div>

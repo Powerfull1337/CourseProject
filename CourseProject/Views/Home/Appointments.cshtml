@@ -1,0 +1,39 @@
+﻿@model List<CourseProject.Models.Domain.Appointement>
+@{
+}
+
+<h1>Slaves</h1>
+
+<div class="container">
+  <div class="pb-1">
+  <table class="table">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th> Ім'я</th>
+            <th> Прізвище </th>
+            <th> Email</th>
+            <th> Телефон</th>
+            <th> Дата замовлення</th>
+            <th> Опис</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appontment in Model)
+        {
+            <tr>
+                <td>@appontment.Id</td>
+                <td>@appontment.FirstName</td>
+                <td>@appontment.LastName</td>
+                <td>@appontment.Email</td>
+                <td>@appontment.Phone</td>
+                <td>@appontment.DateOfBook.ToString("dd-MM-yyyy")</td>
+                <td>@appontment.Description</td>
+                <td><a href="PreviewAppointment/@appontment.Id">Перегляд</a></td>
+            </tr>
+        }
+    </tbody>
+   </table>
+</div>
+</div>
