@@ -12,13 +12,13 @@
 						</div>
 
 						<div class="title--heading">
-							<h1>Appointment</h1>
+							<h1>Замовлення</h1>
 						</div>
 						<div class="clearfix"></div>
 
 						<ol class="breadcrumb">
 							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
-							<li class="active">Appointment</li>
+							<li class="active"></li>
 						</ol>
 					</div>
 					<!-- .title end -->
@@ -31,8 +31,8 @@
 		<div class="container">
 			<div class="section-title row text-center">
 				<div class="col-md-8 offset-md-2">
-					<small>LET'S MAKE AN APPOINTMENT FOR YOUR LIFE</small>
-					<h3>Book now</h3>
+					<small>Зробіть замовлення для покращення вашого життя</small>
+					<h3>Замовляйте тут</h3>
 				</div>
 			</div><!-- end title -->
 
@@ -43,25 +43,37 @@
 						<form method="post" action="Add" name="contactform">
 							<fieldset class="row row-fluid">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="First Name" asp-for="FirstName">
+									<input type="text" class="form-control" placeholder="Ім'я" asp-for="FirstName">
+									<span asp-validation-for="FirstName" class="text-danger"></span>
 								</div>
+
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text"  class="form-control" placeholder="Last Name" asp-for="LastName">
+									<input type="text" class="form-control" placeholder="Прізвище" asp-for="LastName">
+									<span asp-validation-for="LastName" class="text-danger"></span>
 								</div>
+
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="email" class="form-control" placeholder="Your Email" asp-for="Email">
+									<input type="email" class="form-control" placeholder="Email" asp-for="Email">
+									<span asp-validation-for="Email" class="text-danger"></span>
 								</div>
+
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="Your Phone" asp-for="Phone">
+									<input type="text" class="form-control" placeholder="Телефон" asp-for="Phone">
+									<span asp-validation-for="Phone" class="text-danger"></span>
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">					
-									<input type="date" id="basic" class="form-control" placeholder="Select Date" asp-for="DateOfBook">
-								</div>
+
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<textarea class="form-control"  rows="6" placeholder="Give us more details.."asp-for="Description"></textarea>
+									<input type="date" id="basic" class="form-control" placeholder="Виберіть дату" asp-for="DateOfBook">
+									<span asp-validation-for="DateOfBook" class="text-danger"></span>
 								</div>
+
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<textarea class="form-control" rows="6" placeholder="Дайте нам більше деталей" asp-for="Description"></textarea>
+									<span asp-validation-for="Description" class="text-danger"></span>
+								</div>
+
 								<div class="form-btn text-center">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Get Appointment</button>
+									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Зробити замовлення</button>
 								</div>
 							</fieldset>
 						</form>

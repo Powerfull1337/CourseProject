@@ -15,7 +15,7 @@
     <script src="~/js/custom.js"></script>
     <script src="~/js/map.js"></script>
     <script src="~/js/responsive-tabs.js"></script>
-@*     <script src="~/js/appointment.js"></script> *@
+    @*     <script src="~/js/appointment.js"></script> *@
     <!-- Site Icons -->
     <!-- jQuery UI CSS -->
     <!-- jQuery UI library -->
@@ -73,28 +73,7 @@
         </nav>
     </header>
     <div>
-            @RenderBody()
-    </div>
-    <div id="page-content-wrapper">
-        <div class="copyrights">
-            <div class="container">
-                <div class="footer-distributed">
-                    <div class="footer-left">
-                        <p class="footer-links">
-@*                          <a href="#">Home</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">About</a>
-                            <a href="#">Faq</a>
-                            <a href="#">Contact</a> *@
-                        </p>
-                        <p class="footer-company-name">All Rights Reserved. &copy; 2023 Денис</p>
-                    </div>
-                </div>
-            </div><!-- end container -->
-        </div><!-- end copyrights -->
-        
-        <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+        @RenderBody()
     </div>
     @await RenderSectionAsync("Scripts", required: false)
     <!-- Include jQuery and jQuery UI scripts -->

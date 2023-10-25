@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CourseProject.Migrations
 {
     /// <inheritdoc />
-    public partial class НазваМіграції : Migration
+    public partial class slave : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,6 +27,22 @@ namespace CourseProject.Migrations
                 {
                     table.PrimaryKey("PK_Appointements", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Employees",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Salary = table.Column<long>(type: "bigint", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employees", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -34,6 +50,9 @@ namespace CourseProject.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Appointements");
+
+            migrationBuilder.DropTable(
+                name: "Employees");
         }
     }
 }

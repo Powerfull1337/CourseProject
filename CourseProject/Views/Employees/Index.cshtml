@@ -1,0 +1,43 @@
+﻿
+@model List<CourseProject.Models.Domain.Employee>
+
+
+@{
+    Layout = "~/Views/Shared/_OtherLayout.cshtml";
+}
+
+<h1>Робітники</h1>
+
+<div class="container">
+    <div class="pb-3">
+<div>
+    <button onclick="location.href='Employees/Add'" class="view-button">Додати працівника</button>
+</div>
+<table class="table"> 
+<thead> 
+        <tr>
+            <th> Id</th>
+            <th> Ім'я</th>
+            <th> Email </th>
+            <th> Зарплата</th>
+            <th> Дата народження</th>
+            <th> Спеціалізація</th>
+        </tr>
+</thead>
+     <tbody>
+         @foreach(var employee in Model)
+        {
+            <tr>    
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+                <td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td>@employee.Department</td>
+                <td><a href="Employees/View/@employee.Id">Перегляд</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+</div>

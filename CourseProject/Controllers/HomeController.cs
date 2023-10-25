@@ -69,11 +69,11 @@ namespace CourseProject.Controllers
 				};
 				await crudContext.Appointements.AddAsync(appointment);
 				await crudContext.SaveChangesAsync();
-				return View("Index");
+				return View("Confirm");
 			}
 			else
 			{
-				return View(addAppointmentRequest); // Повертаємо вид із помилками валідації
+				return View(addAppointmentRequest); 
 			}
 		}
         [HttpGet]
@@ -130,5 +130,7 @@ namespace CourseProject.Controllers
             }
             return RedirectToAction("Index");
         }
+
     }
+
 }
