@@ -3,39 +3,69 @@
     Layout = "~/Views/Shared/_OtherLayout.cshtml";
 }
 
-
-<h1>Slaves</h1>
+<h1>Замовлення</h1>
 
 <div class="container">
-  <div class="pb-3">
-  <table class="table">
-    <thead>
-        <tr>
-            <th> Id</th>
-            <th> Ім'я</th>
-            <th> Прізвище </th>
-            <th> Email</th>
-            <th> Телефон</th>
-            <th> Дата замовлення</th>
-            <th> Опис</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var appontment in Model)
-        {
-            <tr>
-                <td>@appontment.Id</td>
-                <td>@appontment.FirstName</td>
-                <td>@appontment.LastName</td>
-                <td>@appontment.Email</td>
-                <td>@appontment.Phone</td>
-                <td>@appontment.DateOfBook.ToString("dd-MM-yyyy")</td>
-                <td>@appontment.Description</td>
-                <td><a href="PreviewAppointment/@appontment.Id">Перегляд</a></td>
-            </tr>
+    <div class="pb-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Ім'я</th>
+                    <th> Прізвище </th>
+                    <th> Email</th>
+                    <th> Телефон</th>
+                    <th> Дата замовлення</th>
+                    <th> Опис</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.Id</td>
+                        <td>@appointment.FirstName</td>
+                        <td>@appointment.LastName</td>
+                        <td>@appointment.Email</td>
+                        <td>@appointment.Phone</td>
+                        <td>@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
+                        <td>@appointment.Description</td>
+                        <td> <button onclick="location.href='PreviewAppointment/@appointment.Id'" class="btn btn-primary">Перегляд</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    h1 {
+        margin-top: 30px;
+    }
+
+    .container {
+        padding-left: 10px; /* Adjust the left padding as needed */
+        padding-right: 10px; /* Adjust the right padding as needed */
+    }
+
+    .table {
+        margin: 0 auto;
+    }
+
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
         }
-    </tbody>
-   </table>
-</div>
-</div>
+
+        .table td {
+            padding: 5px; /* Adjust the padding as needed */
+            font-size: 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .table tr:last-child td {
+            border-bottom: none;
+        }
+</style>

@@ -1,11 +1,12 @@
 ﻿@model CourseProject.Models.UpdateEmployeeViewModel
 
 @{
+    Layout = "~/Views/Shared/_OtherLayout.cshtml";
 }
 
 
 <h1>Редагувати працівника</h1>
-<div class="container">
+<div class="container form-container">
     <div class="pb-3">
 <form method="post" action="View" class="mt-5">
     <div class="mb-3">
@@ -37,3 +38,8 @@
 </form>
     </div>
 </div>
+<style>
+    .form-container {
+        margin-bottom: 20px; /* Add margin at the bottom of the container */
+    }
+</style>

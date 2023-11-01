@@ -1,5 +1,4 @@
-﻿
-@model List<CourseProject.Models.Domain.Employee>
+﻿@model List<CourseProject.Models.Domain.Employee>
 
 
 @{
@@ -10,34 +9,99 @@
 
 <div class="container">
     <div class="pb-3">
-<div>
-    <button onclick="location.href='Employees/Add'" class="view-button">Додати працівника</button>
+        <div class="button-container">
+            <button onclick="location.href='Employees/Add'" class="view-button">Додати працівника</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Ім'я</th>
+                    <th> Email </th>
+                    <th> Зарплата</th>
+                    <th> Дата народження</th>
+                    <th> Спеціалізація</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.Id</td>
+                        <td>@employee.Name</td>
+                        <td>@employee.Email</td>
+                        <td>@employee.Salary</td>
+                        <td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                        <td>@employee.Department</td>
+                        <td>
+                            <button onclick="location.href='Employees/View/@employee.Id'" class="btn btn-primary">Перегляд</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<table class="table"> 
-<thead> 
-        <tr>
-            <th> Id</th>
-            <th> Ім'я</th>
-            <th> Email </th>
-            <th> Зарплата</th>
-            <th> Дата народження</th>
-            <th> Спеціалізація</th>
-        </tr>
-</thead>
-     <tbody>
-         @foreach(var employee in Model)
-        {
-            <tr>    
-                <td>@employee.Id</td>
-                <td>@employee.Name</td>
-                <td>@employee.Email</td>
-                <td>@employee.Salary</td>
-                <td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
-                <td>@employee.Department</td>
-                <td><a href="Employees/View/@employee.Id">Перегляд</a></td>
-            </tr>
+<style>
+    /* Add your styles here */
+    .view-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        .view-button:hover {
+            background-color: #387f36; /* Колір при наведенні (темний) */
         }
-    </tbody>
-</table>
-</div>
-</div>
+
+    h1 {
+        margin-top: 30px; /* Ви можете змінити це значення на ваш власний відступ */
+    }
+
+    .button-container {
+        margin-bottom: 20px; /* Ви можете змінити це значення на ваш власний відступ */
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: #fff;
+        text-align: left;
+        padding: 12px;
+    }
+
+    /* Стилізація рядків таблиці */
+    .table td {
+        padding: 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Видалення границь між рядками для останнього рядка таблиці */
+    .table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Стилізація кнопки "Перегляд" */
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        text-decoration: none; /* Заборона зазначення посилання на кнопці */
+        display: inline-block; /* Встановлення кнопки на одному рівні з текстом */
+        border-radius: 4px; /* Закруглені кути кнопки */
+    }
+
+        /* Зміна кольору кнопки при наведенні */
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+</style>
