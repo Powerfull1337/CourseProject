@@ -65,8 +65,27 @@
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">Про нас</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Barbers">Наша команда</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">Замовлення</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointments">Усі Замовлення</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index">Робітники</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            string userName = User.Identity.Name;
+                            if (userName.Length > 5)
+                            {
+                                userName = userName.Substring(0, 5) + "...";
+                            }
+                        //    <li class="scroll-to-section user-info"><a href="#top">Привіт, @userName</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Logout">Вийти</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Login">Логін</a></li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Display">Панель Адміна</a></li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>

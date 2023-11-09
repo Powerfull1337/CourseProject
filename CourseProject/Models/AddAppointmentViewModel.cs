@@ -20,7 +20,6 @@ namespace CourseProject.Models
         [Required(ErrorMessage = "Дата обов'язкова")]
         public DateTime DateOfBook { get; set; }
 
-        [Required(ErrorMessage = "Дайте нам більше деталей")]
         public string Description { get; set; }
     }
 }

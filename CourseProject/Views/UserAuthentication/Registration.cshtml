@@ -1,0 +1,95 @@
+﻿@model CourseProject.Models.DTO.RegistrationModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_OtherLayout.cshtml";
+}
+
+
+<div id="page-content-wrapper">
+	<div class="all-page-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="title title-1 text-center">
+						<div class="much">
+							<img src="uploads/mustache.png" alt="" />
+						</div>
+
+						<div class="title--heading">
+							<h1>Реєстрація</h1>
+						</div>
+						<div class="clearfix"></div>
+
+						<ol class="breadcrumb">
+							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
+							<li class="active"></li>
+						</ol>
+					</div>
+					<!-- .title end -->
+				</div>
+			</div>
+		</div>
+	</div><!-- end all-page-bar -->
+
+	<div id="appointment" class="section wb">
+		<div class="container">
+			<div class="section-title row text-center">
+				<div class="col-md-8 offset-md-2">
+					<small>Ввевідть дані для реєстрації</small>
+					<h3>Реєстрація</h3>
+				</div>
+			</div><!-- end title -->
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="contact_form">
+						<div id="message"></div>
+						<form method="post" asp-action="Registration" name="contactform">
+							<fieldset class="row row-fluid">
+								<span asp-validation-for="Name" class="text-danger"></span>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="text" class="form-control" placeholder="Ім'я" asp-for="Name">
+									
+								</div>
+								<span asp-validation-for="Username" class="text-danger"></span>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="text" class="form-control" placeholder="Логін" asp-for="Username">
+									
+								</div>
+								<span asp-validation-for="Email" class="text-danger"></span>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-122">
+									<input type="email" class="form-control" placeholder="Email" asp-for="Email">
+									
+								</div>
+
+								<span asp-validation-for="Password" class="text-danger"></span>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="password" id="basic" class="form-control" placeholder="Пароль" asp-for="Password">
+									
+								</div>
+								<span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="password" id="basic" class="form-control" placeholder="Повторіть пароль" asp-for="PasswordConfirm">
+									
+								</div>
+								@if (TempData["msg"] != null)
+								{
+									<div class="form-group">
+										<span class="text-info">@TempData["msg"]</span>
+									</div>
+								}
+								<div class="form-btn text-center">
+									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Авторизація</button>
+									<a class="text-alert" href="/UserAuthentication/Login">Not a user? Sign in</a>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end section -->
+</div>

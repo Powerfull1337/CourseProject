@@ -1,8 +1,9 @@
 ﻿using CourseProject.Models.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace CourseProject.Data
 {
-    public class CRUDContext : DbContext
+    public class CRUDContext : IdentityDbContext<ApplicationUser>
     {
         public CRUDContext(DbContextOptions options) : base(options)
         {

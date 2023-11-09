@@ -39,7 +39,8 @@ namespace CourseProject.Controllers
 			return View();
 		}
 
-		[HttpGet]
+      
+        [HttpGet]
 		public async Task<IActionResult> Appointments()
 		{
 			var appointments = await crudContext.Appointements.ToListAsync();
