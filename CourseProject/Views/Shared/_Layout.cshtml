@@ -74,6 +74,7 @@
                                 userName = userName.Substring(0, 5) + "...";
                             }
                       //      <li class="scroll-to-section user-info"><a href="#top">Привіт, @userName</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="User" asp-action="UserAccounts">Аккаунт</a></li>
                             <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Logout">Вийти</a></li>
                         }
                         else

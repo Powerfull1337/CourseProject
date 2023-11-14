@@ -122,6 +122,10 @@ namespace CourseProject.Migrations
                     b.Property<DateTime>("TimeOfBook")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Appointements");

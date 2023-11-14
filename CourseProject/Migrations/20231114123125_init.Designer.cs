@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CourseProject.Migrations
 {
     [DbContext(typeof(CRUDContext))]
-    [Migration("20231112201649_init")]
+    [Migration("20231114123125_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -124,6 +124,10 @@ namespace CourseProject.Migrations
 
                     b.Property<DateTime>("TimeOfBook")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -58,7 +58,7 @@ namespace CourseProject.Controllers
         {
             var model = new RegistrationModel
             {
-                Username = "admin",
+                Username = "admin1",
                 Name = "den",
                 Email = "den90021@gmail.com",
                 Password = "Admin@12345#"

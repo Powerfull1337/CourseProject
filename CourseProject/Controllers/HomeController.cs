@@ -3,6 +3,7 @@ using CourseProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using CourseProject.Models.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CourseProject.Controllers
 {
@@ -39,15 +40,16 @@ namespace CourseProject.Controllers
 			return View();
 		}
 
-      
-        [HttpGet]
-		public async Task<IActionResult> Appointments()
-		{
-			var appointments = await crudContext.Appointements.ToListAsync();
-			return View(appointments);
-		}
 
-		[HttpGet]
+        [HttpGet]
+        public async Task<IActionResult> Appointments()
+        {
+            var appointments = await crudContext.Appointements.ToListAsync();
+            return View(appointments);
+        }
+
+
+        [HttpGet]
 		public IActionResult Add()
 		{
 			return View();
@@ -55,12 +57,14 @@ namespace CourseProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(AddAppointmentViewModel addAppointmentRequest)
 		{
-			
 			if (ModelState.IsValid)
 			{
+				var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
 				var appointment = new Appointement()
 				{
 					Id = Guid.NewGuid(),
+					UserId = userId,
 					FirstName = addAppointmentRequest.FirstName,
 					Email = addAppointmentRequest.Email,
 					Phone = addAppointmentRequest.Phone,
@@ -68,16 +72,19 @@ namespace CourseProject.Controllers
 					TimeOfBook = addAppointmentRequest.TimeOfBook,
 					Description = addAppointmentRequest.Description,
 				};
+
 				await crudContext.Appointements.AddAsync(appointment);
 				await crudContext.SaveChangesAsync();
+
 				return View("Confirm");
 			}
 			else
 			{
-				return View(addAppointmentRequest); 
+				return View(addAppointmentRequest);
 			}
 		}
-        [HttpGet]
+
+		[HttpGet]
         public async Task<IActionResult> PreviewAppointment(Guid id)
         {
             var appointment = await crudContext.Appointements.FirstOrDefaultAsync(x => x.Id == id);
