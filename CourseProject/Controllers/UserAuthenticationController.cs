@@ -58,12 +58,12 @@ namespace CourseProject.Controllers
         {
             var model = new RegistrationModel
             {
-                Username = "user12333",
+                Username = "admin",
                 Name = "den",
                 Email = "den90021@gmail.com",
                 Password = "Admin@12345#"
             };
-            model.Role = "user";
+            model.Role = "admin";
             var result = await this._authService.RegistrationAsync(model);
             return Ok(result);
         }

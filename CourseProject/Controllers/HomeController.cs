@@ -62,10 +62,10 @@ namespace CourseProject.Controllers
 				{
 					Id = Guid.NewGuid(),
 					FirstName = addAppointmentRequest.FirstName,
-					LastName = addAppointmentRequest.LastName,
 					Email = addAppointmentRequest.Email,
 					Phone = addAppointmentRequest.Phone,
 					DateOfBook = addAppointmentRequest.DateOfBook,
+					TimeOfBook = addAppointmentRequest.TimeOfBook,
 					Description = addAppointmentRequest.Description,
 				};
 				await crudContext.Appointements.AddAsync(appointment);
@@ -89,8 +89,8 @@ namespace CourseProject.Controllers
                 {
                     Id = Guid.NewGuid(),
                     FirstName = appointment.FirstName,
-                    LastName = appointment.LastName,
-                    Email = appointment.Email,
+					TimeOfBook = appointment.TimeOfBook,
+					Email = appointment.Email,
                     Phone = appointment.Phone,
                     DateOfBook = appointment.DateOfBook,
                     Description = appointment.Description,
@@ -107,8 +107,8 @@ namespace CourseProject.Controllers
             if (appointment != null)
             {
                 appointment.FirstName = model.FirstName;
-                appointment.FirstName = model.LastName;
-                appointment.Email = model.Email;
+				appointment.TimeOfBook = model.TimeOfBook;
+				appointment.Email = model.Email;
                 appointment.Phone= model.Phone;
                 appointment.DateOfBook = model.DateOfBook;
                 appointment.Description = model.Description;

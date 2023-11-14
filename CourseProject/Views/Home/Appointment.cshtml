@@ -40,17 +40,15 @@
 				<div class="col-lg-12">
 					<div class="contact_form">
 						<div id="message"></div>
-						<form method="post" action="Add" name="contactform">
+						<form method="post" action="/Home/Add" name="contactform">
+
 							<fieldset class="row row-fluid">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="text" class="form-control" placeholder="Ім'я" asp-for="FirstName">
 									<span asp-validation-for="FirstName" class="text-danger"></span>
 								</div>
 
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="Прізвище" asp-for="LastName">
-									<span asp-validation-for="LastName" class="text-danger"></span>
-								</div>
+							
 
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="email" class="form-control" placeholder="Email" asp-for="Email">
@@ -62,19 +60,32 @@
 									<span asp-validation-for="Phone" class="text-danger"></span>
 								</div>
 
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="date" id="basic" class="form-control" placeholder="Виберіть дату" asp-for="DateOfBook">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input type="date" id="datePicker" class="form-control" placeholder="Виберіть дату" asp-for="DateOfBook">
 									<span asp-validation-for="DateOfBook" class="text-danger"></span>
 								</div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input type="time" id="timePicker" class="form-control" placeholder="Виберіть час" asp-for="TimeOfBook">
+									<span asp-validation-for="TimeOfBook" class="text-danger"></span>
+								</div>
+
 
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<textarea class="form-control" rows="6" placeholder="Дайте нам більше деталей" asp-for="Description"></textarea>
 									<span asp-validation-for="Description" class="text-danger"></span>
 								</div>
+								@if (User.Identity.IsAuthenticated)
+								{
+									<div class="form-btn text-center">
+										<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Зробити замовлення</button>
+									</div>
+								}
+								else
+								{
+									<h3>Війдіть в аккаунт для замовлення </h3>
+								}
 
-								<div class="form-btn text-center">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Зробити замовлення</button>
-								</div>
 							</fieldset>
 						</form>
 					</div>
@@ -84,10 +95,19 @@
 	</div><!-- end section -->
 </div>
 <script>
-	flatpickr("#basic", {
-		dateFormat: "d-m-Y",
-		enableTime: false,
-	});
+	flatpickr("#datePicker", {
+        dateFormat: "d-m-Y",
+        enableTime: false,
+        minDate: "today" // Заборонити вибір дати раніше ніж сьогодні
+    });
+
+    flatpickr("#timePicker", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        minTime: "09:00",
+        maxTime: "20:00"
+    });
 </script>
 
 
