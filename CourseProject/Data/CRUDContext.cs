@@ -10,5 +10,6 @@ namespace CourseProject.Data
         }
         public DbSet<Appointement> Appointements { get; set; }
         public DbSet<Employee> Employees { get; set; }
+
     }
 }

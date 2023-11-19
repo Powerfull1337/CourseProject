@@ -61,13 +61,15 @@ namespace CourseProject.Controllers
 			{
 				var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-				var appointment = new Appointement()
-				{
-					Id = Guid.NewGuid(),
-					UserId = userId,
-					FirstName = addAppointmentRequest.FirstName,
-					Email = addAppointmentRequest.Email,
-					Phone = addAppointmentRequest.Phone,
+                var appointment = new Appointement()
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = userId,
+                    FirstName = addAppointmentRequest.FirstName,
+                    Email = addAppointmentRequest.Email,
+                    Phone = addAppointmentRequest.Phone,
+                    ServiceName = addAppointmentRequest.ServiceName,
+					Price = addAppointmentRequest.Price,
 					DateOfBook = addAppointmentRequest.DateOfBook,
 					TimeOfBook = addAppointmentRequest.TimeOfBook,
 					Description = addAppointmentRequest.Description,
@@ -99,7 +101,9 @@ namespace CourseProject.Controllers
 					TimeOfBook = appointment.TimeOfBook,
 					Email = appointment.Email,
                     Phone = appointment.Phone,
-                    DateOfBook = appointment.DateOfBook,
+                    ServiceName = appointment.ServiceName,
+					Price = appointment.Price,
+					DateOfBook = appointment.DateOfBook,
                     Description = appointment.Description,
                 };
                 return await Task.Run(() => View("PreviewAppointment", viewmodel));
@@ -117,7 +121,9 @@ namespace CourseProject.Controllers
 				appointment.TimeOfBook = model.TimeOfBook;
 				appointment.Email = model.Email;
                 appointment.Phone= model.Phone;
-                appointment.DateOfBook = model.DateOfBook;
+                appointment.ServiceName = model.ServiceName;
+				appointment.Price = model.Price;
+				appointment.DateOfBook = model.DateOfBook;
                 appointment.Description = model.Description;
                 await crudContext.SaveChangesAsync();
 

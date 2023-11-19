@@ -14,8 +14,10 @@
                     <th> Ім'я</th>
                     <th> Email</th>
                     <th> Телефон</th>
-                    <th> Час замовлення</th>
-                    <th> Дата замовлення</th>
+                    <th> Послуга </th>
+                    <th> Ціна </th>
+                    <th> Час </th>
+                    <th> Дата </th>
                     <th> Опис</th>
                     <th></th>
                 </tr>
@@ -28,8 +30,9 @@
                         <td>@appointment.FirstName</td>
                         <td>@appointment.Email</td>
                         <td>@appointment.Phone</td>
+                        <td>@appointment.Price</td>
                         <td>@appointment.TimeOfBook.ToString("HH:mm:ss")</td>
-
+                        <td>@appointment.ServiceName</td>
                         <td>@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
                         <td>@appointment.Description</td>
                         <td> <button onclick="location.href='PreviewAppointment/@appointment.Id'" class="btn btn-primary">Перегляд</button></td>
@@ -45,28 +48,46 @@
     }
 
     .container {
-        padding-left: 10px; /* Adjust the left padding as needed */
-        padding-right: 10px; /* Adjust the right padding as needed */
+        padding-left: 5px; /* Adjust the left padding as needed */
+        padding-right: 5px; /* Adjust the right padding as needed */
     }
 
-    .table {
-        margin: 0 auto;
+    table {
+        width: 900px;
+        font-family: sans-serif;
+        font-weight: 100;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0000001a;
     }
 
-        .table th {
-            background-color: #007bff;
-            color: #fff;
-            text-align: left;
-            padding: 10px;
-        }
+    th,
+    td {
+        background-color: #ffffff33;
+        padding: 15px;
+        /*     color: #fff; */
+    }
 
-        .table td {
-            padding: 5px; /* Adjust the padding as needed */
-            font-size: 18px;
-            border-bottom: 1px solid #e0e0e0;
-        }
+    thead th {
+        background-color: #55608f;
+    }
 
-        .table tr:last-child td {
-            border-bottom: none;
+    tbody tr:hover {
+        background-color: #ffffff4d
+    }
+
+    tbody td {
+        position: relative;
+    }
+
+        tbody td:hover:before {
+            content: "";
+            position: absolute;
+            background-color: #ffffff33;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            z-index: -1;
         }
 </style>

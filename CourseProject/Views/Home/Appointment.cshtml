@@ -69,6 +69,21 @@
 									<input type="time" id="timePicker" class="form-control" placeholder="Виберіть час" asp-for="TimeOfBook">
 									<span asp-validation-for="TimeOfBook" class="text-danger"></span>
 								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select class="form-control" asp-for="ServiceName" placeholder="Виберіть послугу" id="serviceSelect">
+										<option value="">Виберіть послугу</option>
+										<option value="Стрижка чоловіча" data-price="10">Стрижка чоловіча</option>
+										<option value="Стрижка жіноча" data-price="15">Стрижка жіноча</option>
+										<option value="Бриття бороди" data-price="5">Бриття бороди</option>
+										<!-- Додайте інші варіанти, якщо потрібно -->
+									</select>
+									<span asp-validation-for="ServiceName" class="text-danger"></span>
+								</div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input type="text" class="form-control" placeholder="Ціна" asp-for="Price" id="priceInput" readonly>
+									<span asp-validation-for="Price" class="text-danger"></span>
+								</div>
 
 
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -77,7 +92,7 @@
 								</div>
 								@if (User.Identity.IsAuthenticated)
 								{
-									<div class="form-btn text-center">
+									<div class="form-btn text-center offset-lg-9">
 										<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Зробити замовлення</button>
 									</div>
 								}
@@ -95,6 +110,19 @@
 	</div><!-- end section -->
 </div>
 <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var serviceSelect = document.getElementById("serviceSelect");
+		var priceInput = document.getElementById("priceInput");
+
+		serviceSelect.addEventListener("change", function () {
+			var selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+			var price = selectedOption.getAttribute("data-price");
+
+			// Оновлення поля з ціною
+			priceInput.value = price ? price + " грн" : "";
+		});
+	});
+
 	flatpickr("#datePicker", {
 		dateFormat: "Y-m-d",
         enableTime: false,

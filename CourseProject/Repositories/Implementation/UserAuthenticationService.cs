@@ -111,7 +111,7 @@ namespace CourseProject.Repositories.Implementation
             }
 
             status.StatusCode = 1;
-            status.Message = "You have registered successfully";
+            status.Message = "Ви  успішно зареєструвались ";
             return status;
         }
     }

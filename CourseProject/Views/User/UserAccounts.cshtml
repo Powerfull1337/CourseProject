@@ -14,24 +14,29 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th> Id</th>
+                  @*  <th> Id</th> *@
                     <th> Ім'я</th>
                     <th> Email</th>
                     <th> Телефон</th>
-                    <th> Час замовлення</th>
-                    <th> Дата замовлення</th>
+                    <th> Послуга</th>
+                    <th> Ціна</th>
+                    <th> Час </th>
+                    <th> Дата </th>
                     <th> Опис</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
                 @foreach (var appointment in Model)
                 {
                     <tr>
-                        <td>@appointment.Id</td>
+                        @* <td>@appointment.Id</td> *@
                         <td>@appointment.FirstName</td>
                         <td>@appointment.Email</td>
-                        <td>@appointment.Phone</td>
+                         <td>@appointment.Phone</td>
+                    
+                      <td>@appointment.ServiceName</td>
+                    <td>@appointment.Price</td>
                         <td>@appointment.TimeOfBook.ToString("HH:mm:ss")</td>
                         <td>@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
                         <td>@appointment.Description</td>             
