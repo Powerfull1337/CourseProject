@@ -41,6 +41,8 @@ namespace CourseProject.Controllers
                 Salary = addEmployeeRequest.Salary,
                 Department = addEmployeeRequest.Department,
                 DateOfBirth = addEmployeeRequest.DateOfBirth,
+                Image = addEmployeeRequest.Image,
+                Description = addEmployeeRequest.Description,
             };
             await crudContext.Employees.AddAsync(employee);
             await crudContext.SaveChangesAsync();
@@ -63,6 +65,8 @@ namespace CourseProject.Controllers
                     Salary = employee.Salary,
                     Department = employee.Department,
                     DateOfBirth = employee.DateOfBirth,
+                    Image = employee.Image,
+                    Description = employee.Description,
                 };
                 return await Task.Run(() => View("View", viewmodel));
             }
@@ -81,6 +85,8 @@ namespace CourseProject.Controllers
                 employee.Salary = model.Salary;
                 employee.DateOfBirth = model.DateOfBirth;
                 employee.Department = model.Department;
+                employee.Image = model.Image;
+                employee.Description = model.Description; 
                 await crudContext.SaveChangesAsync();
 
                 return RedirectToAction("Index");

@@ -26,10 +26,7 @@ namespace CourseProject.Controllers
         {
             return View();
         }
-		public IActionResult Barbers()
-		{
-			return View();
-		}
+
 		public IActionResult Services()
 		{
 			return View();
@@ -144,7 +141,12 @@ namespace CourseProject.Controllers
             }
             return RedirectToAction("Index");
         }
-
+        [HttpGet]
+        public async Task<IActionResult> Barbers()
+        {
+            var emploees = await crudContext.Employees.ToListAsync();
+            return View(emploees);
+        }
     }
 
 }

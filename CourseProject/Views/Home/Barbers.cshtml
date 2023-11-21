@@ -1,4 +1,4 @@
-﻿
+﻿@model List<CourseProject.Models.Domain.Employee>
 @{
 }
 <div id="page-content-wrapper">
@@ -38,11 +38,14 @@
 			</div><!-- end title -->
 
 			<div class="row dev-list text-center">
+
+				@foreach (var employee in Model)
+                {
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
 					<div class="widget our-inner-taem clearfix">
 						<div class="t-top"></div>
 						<div class="hover-br">
-							<img src="~/uploads/barber_01.jpg" alt="" class="img-responsive">
+							<img src="~/@employee.Image" alt="" class="img-responsive">
 							<div class="social-up-hover">
 								<div class="footer-social">
 									<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
@@ -53,16 +56,16 @@
 							</div>
 						</div>
 						<div class="widget-title">
-							<h3>Денис Паламарчук</h3>
-							<small>Засновник</small>
+							<h3>@employee.Name</h3>
+								<small>@employee.Department</small>
 						</div>
 						<!-- end title -->
-						<p>Всім привіт, я з Хмельницької області.</p>
+							<p>@employee.Description</p>
 						<div class="t-bottom"></div>
 					</div><!--widget -->
 				</div><!-- end col -->
-
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+				}
+			@* 	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
 					<div class="widget our-inner-taem clearfix">
 						<div class="t-top"></div>
 						<div class="hover-br">
@@ -180,7 +183,7 @@
 						<p>Всім привіт, я з Криворізької області.</p>
 						<div class="t-bottom"></div>
 					</div><!--widget -->
-				</div><!-- end col -->
+				</div><!-- end col --> *@
 			</div><!-- end row -->
 		</div><!-- end container -->
 	</div><!-- end section -->
