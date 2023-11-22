@@ -1,7 +1,7 @@
 ﻿using CourseProject.Data;
-using CourseProject.Models.Domain;
 using CourseProject.Models;
-
+using CourseProject.Models.Domain;
+using CourseProject.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<CourseProject.Models.Domain.Service>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -127,7 +129,7 @@
 							</div>
 						</div><!-- end service -->
 
-						<div class="service-widget">
+						@* <div class="service-widget">
 							<div class="post-media wow fadeIn">
 								<a href="~/uploads/barber_02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
 								<img src="~/uploads/barber_02.jpg" alt="" class="img-responsive img-rounded">
@@ -180,7 +182,7 @@
 								<h3>The Barber Materials</h3>
 								<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis posuere.</p>
 							</div>
-						</div><!-- end service -->
+						</div><!-- end service --> *@
 
 					</div>
 				</div>
@@ -198,15 +200,19 @@
 			</div><!-- end title -->
 			<div class="row">
 				<div class="col-md-6">
+
+					@foreach (var service in Model)
+                {
 					<div class="service-wrap text-center clearfix">
 						<div class="uptop">
-							<img src="~/uploads/barber_service_01.jpg" alt="" class="img-responsive img-rounded alignleft">
+								<img src="~/@service.Image" alt="" class="img-responsive img-rounded alignleft">
 						</div>
-						<h4>Догляд за бородою та вусами</h4>
-						<p>Високо освідчені барбери допоможуть вам з доглядом за бородою та вусами</p>
+							<h4>@service.Name</h4>
+						<p>@service.Description</p>
 					</div><!-- end issue -->
+				}
 
-					<div class="service-wrap text-center clearfix">
+					@* <div class="service-wrap text-center clearfix">
 						<div class="uptop">
 							<img src="~/uploads/barber_service_02.jpg" alt="" class="img-responsive img-rounded alignleft">
 						</div>
@@ -246,7 +252,7 @@
 						</div>
 						<h4>Миття голови</h4>
 						<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
-					</div><!-- end issue -->
+					</div><!-- end issue --> *@
 				</div><!-- end col -->
 			</div>
 		@* 	<div class="row flex-items-xs-middle flex-items-xs-center">

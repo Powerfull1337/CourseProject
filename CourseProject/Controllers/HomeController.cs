@@ -1,9 +1,10 @@
 ﻿using CourseProject.Data;
-using CourseProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using CourseProject.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using CourseProject.Models.ViewModel;
+using CourseProject.Models;
 
 namespace CourseProject.Controllers
 {
@@ -17,10 +18,11 @@ namespace CourseProject.Controllers
 		}
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+			var service = await crudContext.Services.ToListAsync();
+			return View(service);
+		}
 
         public IActionResult About()
         {
@@ -32,21 +34,38 @@ namespace CourseProject.Controllers
 			return View();
 		}
 
-		public IActionResult Appointment()
+		public async Task<IActionResult> Appointment()
 		{
-			return View();
+			var addAppointmentModel = new AddAppointmentViewModel(); 
+			var service = await crudContext.Services.ToListAsync();
+
+			var viewModel = new AppointmentsViewModel
+			{
+				AddAppointmentModel = addAppointmentModel,
+				Services = service
+			};
+
+			return View(viewModel);
 		}
 
 
-        [HttpGet]
-        public async Task<IActionResult> Appointments()
-        {
-            var appointments = await crudContext.Appointements.ToListAsync();
-            return View(appointments);
-        }
+		[HttpGet]
+		public async Task<IActionResult> Appointments()
+		{
+			var appointments = await crudContext.Appointements.ToListAsync();
+			//var services = await crudContext.Services.ToListAsync();
+
+			//var viewModel = new ServiceAppointmentViewModel // Замініть "YourViewModel" на назву вашого ViewModel
+			//{
+			//	Appointments = appointments,
+			//	Services = services
+			//};
+
+			return View(appointments);
+		}
 
 
-        [HttpGet]
+		[HttpGet]
 		public IActionResult Add()
 		{
 			return View();

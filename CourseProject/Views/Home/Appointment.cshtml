@@ -1,4 +1,4 @@
-﻿@model CourseProject.Models.AddAppointmentViewModel
+﻿@model CourseProject.Models.ViewModel.AppointmentsViewModel
 @{
 }
 <div id="page-content-wrapper">
@@ -41,51 +41,41 @@
 					<div class="contact_form">
 						<div id="message"></div>
 						<form method="post" action="/Home/Add" name="contactform">
-
 							<fieldset class="row row-fluid">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="text" class="form-control" placeholder="Ім'я" asp-for="FirstName">
 									<span asp-validation-for="FirstName" class="text-danger"></span>
 								</div>
-
-							
-
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="email" class="form-control" placeholder="Email" asp-for="Email">
 									<span asp-validation-for="Email" class="text-danger"></span>
 								</div>
-
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="text" class="form-control" placeholder="Телефон" asp-for="Phone">
 									<span asp-validation-for="Phone" class="text-danger"></span>
 								</div>
-
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="date" id="datePicker" class="form-control" placeholder="Виберіть дату" asp-for="DateOfBook">
 									<span asp-validation-for="DateOfBook" class="text-danger"></span>
 								</div>
-
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="time" id="timePicker" class="form-control" placeholder="Виберіть час" asp-for="TimeOfBook">
 									<span asp-validation-for="TimeOfBook" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<select class="form-control" asp-for="ServiceName" placeholder="Виберіть послугу" id="serviceSelect">
+										@foreach(var service in Model.Services)
+										{
 										<option value="">Виберіть послугу</option>
-										<option value="Стрижка чоловіча" data-price="300">Стрижка чоловіча</option>
-										<option value="Стрижка жіноча" data-price="450">Стрижка жіноча</option>
-										<option value="Бриття бороди" data-price="150">Бриття бороди</option>
-								
+											<option value="@service.Name" data-price="@service.Price">@service.Name</option>
+										}
 									</select>
 									<span asp-validation-for="ServiceName" class="text-danger"></span>
 								</div>
-
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="text" class="form-control" placeholder="Ціна" asp-for="Price" id="priceInput" readonly>
 									<span asp-validation-for="Price" class="text-danger"></span>
 								</div>
-
-
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<textarea class="form-control" rows="6" placeholder="Дайте нам більше деталей" asp-for="Description"></textarea>
 									<span asp-validation-for="Description" class="text-danger"></span>
@@ -100,7 +90,6 @@
 								{
 									<h3>Війдіть в аккаунт для замовлення </h3>
 								}
-
 							</fieldset>
 						</form>
 					</div>

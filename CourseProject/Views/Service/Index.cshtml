@@ -1,0 +1,109 @@
+﻿@model List<CourseProject.Models.Domain.Service>
+
+
+@{
+    Layout = "~/Views/Shared/_OtherLayout.cshtml";
+}
+
+<h1>Послуги</h1>
+
+<div class="container">
+    <div class="pb-3">
+        <div class="button-container">
+            <button onclick="location.href='Service/Add'" class="view-button">Додати послугу</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Ім'я</th>
+                    <th> Ціна </th>
+                    <th> Опис</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var service in Model)
+                {
+                    <tr>
+                        <td>@service.Id</td>
+                        <td>@service.Name</td>
+                        <td>@service.Price</td>
+                        <td>@service.Description</td>
+                        <td>
+                            <button onclick="location.href='Service/View/@service.Id'" class="btn btn-primary">Перегляд</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    /* Add your styles here */
+    .view-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        .view-button:hover {
+            background-color: #387f36; /* Колір при наведенні (темний) */
+        }
+
+
+    h1 {
+        margin-top: 30px;
+    }
+
+    .container {
+        padding-left: 5px; /* Adjust the left padding as needed */
+        padding-right: 5px; /* Adjust the right padding as needed */
+    }
+
+    table {
+        width: 900px;
+        font-family: sans-serif;
+        font-weight: 100;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0000001a;
+    }
+
+    th,
+    td {
+        background-color: #ffffff33;
+        padding: 15px;
+        /*     color: #fff; */
+    }
+
+    thead th {
+        background-color: #55608f;
+    }
+
+    tbody tr:hover {
+        background-color: #ffffff4d
+    }
+
+    tbody td {
+        position: relative;
+    }
+
+        tbody td:hover:before {
+            content: "";
+            position: absolute;
+            background-color: #ffffff33;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            z-index: -1;
+        }
+</style>
