@@ -7,12 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Resources\Views\Home\Services.uk.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Localization.AspNetCore.TagHelpers" Version="0.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Views\Admin\" />
+    <Folder Include="Resources\Views\Employees\" />
+    <Folder Include="Resources\Views\Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\Views\Home\Services.uk.resx" />
   </ItemGroup>
 
 </Project>

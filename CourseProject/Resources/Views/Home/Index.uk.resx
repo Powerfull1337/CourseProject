@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Єгор Столярчук" xml:space="preserve">
+    <value>Єгор Столярчук</value>
+  </data>
+  <data name="Барбер" xml:space="preserve">
+    <value>Барбер</value>
+  </data>
+  <data name="Барбершоп" xml:space="preserve">
+    <value>Барбершоп</value>
+  </data>
+  <data name="в Хмельницькому" xml:space="preserve">
+    <value>в Хмельницькому</value>
+  </data>
+  <data name="Вражаючий інтер'єр" xml:space="preserve">
+    <value>Вражаючий інтер'єр</value>
+  </data>
+  <data name="Всім привіт я з Хмельницької області." xml:space="preserve">
+    <value>Всім привіт я з Хмельницької області.</value>
+  </data>
+  <data name="Дізнатись більше" xml:space="preserve">
+    <value>Дізнатись більше</value>
+  </data>
+  <data name="Денис Паламарчук" xml:space="preserve">
+    <value>Денис Паламарчук</value>
+  </data>
+  <data name="Записатись" xml:space="preserve">
+    <value>Записатись</value>
+  </data>
+  <data name="Запрошаємо у наш StyleBarber" xml:space="preserve">
+    <value>Запрошаємо у наш StyleBarber</value>
+  </data>
+  <data name="Засновник" xml:space="preserve">
+    <value>Засновник</value>
+  </data>
+  <data name="Консультація у майстра" xml:space="preserve">
+    <value>Консультація у майстра</value>
+  </data>
+  <data name="Мазур Дмитро" xml:space="preserve">
+    <value>Мазур Дмитро</value>
+  </data>
+  <data name="найкращі майстри та доступні ціні" xml:space="preserve">
+    <value>найкращі майстри та доступні ціні</value>
+  </data>
+  <data name="Найкращий барбершоп у місті" xml:space="preserve">
+    <value>Найкращий барбершоп у місті</value>
+  </data>
+  <data name="Наш барбершоп - це база для чоловіків, де ви зможете насолодитися найвищим рівнем грумінгу та розкоші в стилі вінтажної атмосфери. Наш барбершоп - це не просто місце для стрижки волосся, це справжнє місце для відпочинку і релаксації для сучасних чоловіків, які прагнуть доглядати за собою та виглядати найкраще." xml:space="preserve">
+    <value>Наш барбершоп - це база для чоловіків, де ви зможете насолодитися найвищим рівнем грумінгу та розкоші в стилі вінтажної атмосфери. Наш барбершоп - це не просто місце для стрижки волосся, це справжнє місце для відпочинку і релаксації для сучасних чоловіків, які прагнуть доглядати за собою та виглядати найкраще.</value>
+  </data>
+  <data name="Наш барбершоп - це місце, де ми створюємо стиль та самовираз кожного клієнта. Ми віримо, що кожна зачіска може бути творчим шедевром, а кожен клієнт - унікальною історією. Наша команда пристрасних фахівців присвячена не просто роботі, а мистецтву, і завжди тут, щоб допомогти вам виглядати найкращим.Ми розуміємо, що важливо не лише відмінно виглядати, але і почувати себе комфортно під час візиту до нашого закладу. Наша атмосфера сповнена тепла та доброзичливості, що допомагає нашим клієнтам розслабитися та розкрити свій справжній потенціал." xml:space="preserve">
+    <value>Наш барбершоп - це місце, де ми створюємо стиль та самовираз кожного клієнта. Ми віримо, що кожна зачіска може бути творчим шедевром, а кожен клієнт - унікальною історією. Наша команда пристрасних фахівців присвячена не просто роботі, а мистецтву, і завжди тут, щоб допомогти вам виглядати найкращим.Ми розуміємо, що важливо не лише відмінно виглядати, але і почувати себе комфортно під час візиту до нашого закладу. Наша атмосфера сповнена тепла та доброзичливості, що допомагає нашим клієнтам розслабитися та розкрити свій справжній потенціал.</value>
+  </data>
+  <data name="Наші барбери" xml:space="preserve">
+    <value>Наші барбери</value>
+  </data>
+  <data name="Наші досвідчені майстри володіють вищим рівнем майстерності і завжди готові відповісти на всі ваші побажання щодо зачіски, стрижки або гоління. Ми використовуємо найсучасніше обладнання та продукти для догляду за волоссям і волоссям обличчя, щоб забезпечити найкращі результати.Ми не просто стригаємо волосся - ми створюємо шедеври, які підкреслять ваш стиль і впевненість. Ми докладаємо всіх зусиль, щоб зробити кожен візит до нас особливим і незабутнім. Наша місія - зробити вас щасливими, впевненими в собі та завжди готовими до нових викликів." xml:space="preserve">
+    <value>Наші досвідчені майстри володіють вищим рівнем майстерності і завжди готові відповісти на всі ваші побажання щодо зачіски, стрижки або гоління. Ми використовуємо найсучасніше обладнання та продукти для догляду за волоссям і волоссям обличчя, щоб забезпечити найкращі результати.Ми не просто стригаємо волосся - ми створюємо шедеври, які підкреслять ваш стиль і впевненість. Ми докладаємо всіх зусиль, щоб зробити кожен візит до нас особливим і незабутнім. Наша місія - зробити вас щасливими, впевненими в собі та завжди готовими до нових викликів.</value>
+  </data>
+  <data name="Наші послуги Барберів" xml:space="preserve">
+    <value>Наші послуги Барберів</value>
+  </data>
+  <data name="Наша задача" xml:space="preserve">
+    <value>Наша задача</value>
+  </data>
+  <data name="Познайомтесь з нашою командою" xml:space="preserve">
+    <value>Познайомтесь з нашою командою</value>
+  </data>
+  <data name="Про нас" xml:space="preserve">
+    <value>Про нас</value>
+  </data>
+  <data name="Стильний дизайн" xml:space="preserve">
+    <value>Стильний дизайн</value>
+  </data>
+  <data name="Сучасний дизай" xml:space="preserve">
+    <value>Сучасний дизай</value>
+  </data>
+  <data name="У нас це не просто місце для стрижки волосся, це справжній оазис відпочинку та релаксації для сучасних чоловіків, які прагнуть доглядати за собою та виглядати найкраще." xml:space="preserve">
+    <value>У нас це не просто місце для стрижки волосся, це справжній оазис відпочинку та релаксації для сучасних чоловіків, які прагнуть доглядати за собою та виглядати найкраще.</value>
+  </data>
+  <data name="У нашому барбершопі ми прагнемо надати нашим клієнтам не лише стрижку і гоління, але й незабутній досвід, який запам'ятається надовго. Наша місія - відновити справжнє мистецтво чоловічого грумінгу і створити комфортну атмосферу, де кожен чоловік може відчути себе особливим. Ми віримо, що догляд за власною зовнішністю - це не просто ритуал, а спосіб виразити свою індивідуальність і самовираження. Тому ми працюємо, щоб кожен наш клієнт виглядав і почувався найкращим способом." xml:space="preserve">
+    <value>У нашому барбершопі ми прагнемо надати нашим клієнтам не лише стрижку і гоління, але й незабутній досвід, який запам'ятається надовго. Наша місія - відновити справжнє мистецтво чоловічого грумінгу і створити комфортну атмосферу, де кожен чоловік може відчути себе особливим. Ми віримо, що догляд за власною зовнішністю - це не просто ритуал, а спосіб виразити свою індивідуальність і самовираження. Тому ми працюємо, щоб кожен наш клієнт виглядав і почувався найкращим способом.</value>
+  </data>
+  <data name="Ціни та опис послуг" xml:space="preserve">
+    <value>Ціни та опис послуг</value>
+  </data>
+  <data name="Чому ми?" xml:space="preserve">
+    <value>Чому ми?</value>
+  </data>
+</root>

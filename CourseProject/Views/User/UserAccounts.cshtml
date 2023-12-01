@@ -1,94 +1,98 @@
-﻿@model List<CourseProject.Models.Domain.Appointement>
+﻿@model CourseProject.Models.ViewModel.UpdateUserViewModel
+@using System.Security.Claims
+
 @{
     Layout = "~/Views/Shared/_OtherLayout.cshtml";
-    string userName = User.Identity.Name;
 }
 
+@if (User.IsInRole("admin"))
+{
+    <div class="admin-content">
+        <ul class="nav">
+            <li class="admin-link"><a asp-area="" asp-controller="Home" asp-action="Appointments">Усі Замовлення</a></li>
+            <li class="admin-link"><a asp-area="" asp-controller="Employees" asp-action="Index">Робітники</a></li>
+            <li class="admin-link"><a asp-area="" asp-controller="Service" asp-action="Index">Послуги</a></li>
+        </ul>
+    </div>
+}
 
+else
+{
+    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <form method="post" action="UserAccounts" class="mt-5">
+                <div class="row mt-2">
+                            <div class="col-md-6">
+                                <label class="labels">Name</label>    <div class="mb-3">
+                                    <label for="" class="form-label">Name</label>
+                                    <input type="text" class="form-control" asp-for="Name">
+                               
+                            </div>
+                        <div class="col-md-6">
+                            <label class="labels">Email</label>
+                            <input type="email" class="form-control" asp-for="Email">
+                        </div>
+                            </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                    <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
 
-<h1>Ваші замовлення</h1>
-<h1>@userName</h1>
+                </div>
 
-<div class="container">
-@*   <div class="pb-3">  *@
-        <table class="table">
-            <thead>
-                <tr>
-                  @*  <th> Id</th> *@
-                    <th> Ім'я</th>
-                    <th> Email</th>
-                    <th> Телефон</th>
-                    <th> Послуга</th>
-                    <th> Ціна</th>
-                    <th> Час </th>
-                    <th> Дата </th>
-                    <th> Опис</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody> 
-                @foreach (var appointment in Model)
-                {
-                    <tr>
-                        @* <td>@appointment.Id</td> *@
-                        <td>@appointment.FirstName</td>
-                        <td>@appointment.Email</td>
-                         <td>@appointment.Phone</td>
-                    
-                      <td>@appointment.ServiceName</td>
-                    <td>@appointment.Price</td>
-                        <td>@appointment.TimeOfBook.ToString("HH:mm:ss")</td>
-                        <td>@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
-                        <td>@appointment.Description</td>             
-                    </tr>
-                }
-            </tbody>
-        </table>
-      @* </div>  *@
-</div> 
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                    </form>
+                    <div class="mt-5 text-center">
+                        <a class="btn btn-primary profile-button" asp-controller="User" asp-action="UserAppointments" role="button">
+                            Переглянути ваші замовлення
+                        </a>
+                    </div>
+                </div>
+        </div>
+  
+    </div>
+</div>
+
+}
 <style>
-    h1 {
+    .admin-content {
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center the child elements vertically */
+        height: 100vh; /* Set the height to 100% of the viewport height */
+    }
+
+    .admin-link a {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    h1, h2 {
         margin-top: 30px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .user-content {
+        /* Add styles for user content if needed */
     }
 
     .container {
-        padding-left: 5px; /* Adjust the left padding as needed */
-        padding-right: 5px; /* Adjust the right padding as needed */
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
-    table {
-        width: 900px;
-        font-family: sans-serif;
-        font-weight: 100;
-        border-collapse: collapse;
-        overflow: hidden;
-        box-shadow: 0 0 20px #0000001a;
-
-    }
-    th,
-    td{
-        background-color: #ffffff33;
-        padding: 15px;
-    /*     color: #fff; */
-    }
-    thead th{
-        background-color: #55608f;
-    }
-    tbody tr:hover{
-        background-color: #ffffff4d
-    }
-    tbody td{
-        position: relative;
-    }
-    tbody td:hover:before {
-        content: "";
-        position: absolute;
-        background-color: #ffffff33;
-        left: 0;
-        right: 0;
-        top: -9999px;
-        bottom: -9999px;
-        z-index: -1;
-    }
-     
 </style>

@@ -15,16 +15,16 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="title title-1 text-center">
 						<div class="much">
-							<img src="uploads/mustache.png" alt="" />
+							<img src="~/uploads/mustache.png" alt="" />
 						</div>
 
 						<div class="title--heading">
-							<h1>Авторизація</h1>
+							<h1>@Localizer["Авторизація"]</h1>
 						</div>
 						<div class="clearfix"></div>
 
 						<ol class="breadcrumb">
-							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
+							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Головна"]</a></li>
 							<li class="active"></li>
 						</ol>
 					</div>
@@ -38,8 +38,8 @@
 		<div class="container">
 			<div class="section-title row text-center">
 				<div class="col-md-8 offset-md-2">
-					<small>Ввевідть дані для авторизації</small>
-					<h3>Авторизація</h3>
+					<small>@Localizer["Введіть дані для авторизації"]</small>
+					<h3>@Localizer["Авторизація"]</h3>
 				</div>
 			</div><!-- end title -->
 
@@ -49,36 +49,28 @@
 						<div id="message"></div>
 						<form method="post" asp-action="Login" name="contactform">
 							<fieldset class="row row-fluid">
-						
-
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="text" class="form-control" placeholder="Логін" asp-for="Username">
+									<input type="text" class="form-control" placeholder="@Localizer["Логін"]" asp-for="Username">
 									<span asp-validation-for="Username" class="text-danger"></span>
 								</div>
-
-						
-
-
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="password" id="basic" class="form-control" placeholder="Пароль" asp-for="Password">
+									<input type="password" id="basic" class="form-control" placeholder=@Localizer["Пароль"] asp-for="Password">
 									<span asp-validation-for="Password" class="text-danger"></span>
 								</div>
-
-							
 								@if (TempData["msg"] != null)
 								{
 									<div class="form-group">
 										<span class="text-info">@TempData["msg"]</span>
 									</div>
 								}
-								<div class="form-btn text-center offset-lg-8">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Авторизація</button>
-									<a class="text-alert" href="/UserAuthentication/Registration">Not a user? Signup</a>
+								<div class="form-btn text-center offset-lg-10">
+									<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Авторизація"]</button>
+									<a class="text-alert" href="/UserAuthentication/Registration">@Localizer["Немає акаунту? Зареєструйтесь"]</a>
 								</div>
 							</fieldset>
 						</form>
 					</div>
-				</div><!-- end col -->
+				</div><!-- end col Not a user? Signup -->
 			</div><!-- end row -->
 		</div><!-- end container -->
 	</div><!-- end section -->

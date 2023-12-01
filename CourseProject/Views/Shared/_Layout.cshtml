@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Basic -->
@@ -7,7 +10,7 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Site Metas -->
-    <title>StyleBarber - Bootstrap 4 Responsive HTML5 Template</title>
+    <title>StyleBarber</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -60,11 +63,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbars-rs-food">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Services">Послуги</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">Про нас</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Barbers">Команда</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">Замовлення</a></li>
+                        <li class="nav-item active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Головна"]</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Послуги"]</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">@Localizer["Про нас"]</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Barbers">@Localizer["Команда"]</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">@Localizer["Замовлення"]</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @Thread.CurrentThread.CurrentUICulture.Name
+                            </a>
+                            <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/?culture=uk">Ukraine</a></li>
+                                <li><a class="dropdown-item" href="/?culture=en">Engilsh</a></li>
+                            </ul>
+                        </li>
 
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -73,25 +85,29 @@
                             {
                                 userName = userName.Substring(0, 5) + "...";
                             }
-                      //      <li class="scroll-to-section user-info"><a href="#top">Привіт, @userName</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="User" asp-action="UserAccounts">Аккаунт</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Logout">Вийти</a></li>
+                                //      <li class="scroll-to-section user-info"><a href="#top">Привіт, @userName</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="location.href='@Url.Action("UserAccounts", "User", new { id = User.FindFirstValue(ClaimTypes.NameIdentifier) })'">
+                                    @Localizer["Аккаунт"]
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Logout">@Localizer["Вийти"]</a></li>
                         }
                         else
                         {
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Login">Логін</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Login">@Localizer["Логін"]</a></li>
                         }
-                        @*              
-               
-           <li class="main-button"><a href="/UserAuthentication/Login">Sign Up</a></li>
+                        @*
+
+                        <li class="main-button"><a href="/UserAuthentication/Login">Sign Up</a></li>
                         <li><a href="/UserAuthentication/Logout">Logout</a></li> *@
-                        @if (User.Identity.IsAuthenticated)
+                        @*      @if (User.Identity.IsAuthenticated)
                         {
-                            @if (User.IsInRole("admin"))
-                            {
-                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Display">Панель Адміна</a></li>
-                            }
+                        @if (User.IsInRole("admin"))
+                        {
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Display">Панель Адміна</a></li>
                         }
+                        } *@
 
 
                         @*  <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointments">Усі Замовлення</a></li>

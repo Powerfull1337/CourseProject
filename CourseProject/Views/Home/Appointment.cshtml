@@ -12,12 +12,12 @@
 						</div>
 
 						<div class="title--heading">
-							<h1>Замовлення</h1>
+							<h1>@Localizer["Замовлення"]</h1>
 						</div>
 						<div class="clearfix"></div>
 
 						<ol class="breadcrumb">
-							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
+							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Головна"]</a></li>
 							<li class="active"></li>
 						</ol>
 					</div>
@@ -31,8 +31,8 @@
 		<div class="container">
 			<div class="section-title row text-center">
 				<div class="col-md-8 offset-md-2">
-					<small>Зробіть замовлення для покращення вашого життя</small>
-					<h3>Замовляйте тут</h3>
+					<small>@Localizer["Зробіть замовлення для покращення вашого життя"]</small>
+					<h3>@Localizer["Замовляйте тут"]</h3>
 				</div>
 			</div><!-- end title -->
 
@@ -43,7 +43,7 @@
 						<form method="post" action="/Home/Add" name="contactform">
 							<fieldset class="row row-fluid">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="Ім'я" asp-for="FirstName">
+									<input type="text" class="form-control" placeholder="@Localizer["Ім'я"]" asp-for="FirstName">
 									<span asp-validation-for="FirstName" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -51,44 +51,44 @@
 									<span asp-validation-for="Email" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="Телефон" asp-for="Phone">
+									<input type="text" class="form-control" placeholder=@Localizer["Телефон"] asp-for="Phone">
 									<span asp-validation-for="Phone" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="date" id="datePicker" class="form-control" placeholder="Виберіть дату" asp-for="DateOfBook">
+									<input type="date" id="datePicker" class="form-control" placeholder=@Localizer["Виберіть дату"] asp-for="DateOfBook">
 									<span asp-validation-for="DateOfBook" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="time" id="timePicker" class="form-control" placeholder="Виберіть час" asp-for="TimeOfBook">
+									<input type="time" id="timePicker" class="form-control" placeholder=@Localizer["Виберіть час"] asp-for="TimeOfBook">
 									<span asp-validation-for="TimeOfBook" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<select class="form-control" asp-for="ServiceName" placeholder="Виберіть послугу" id="serviceSelect">
+									<select class="form-control" asp-for="ServiceName" placeholder=@Localizer["Виберіть послугу"] id="serviceSelect">
 										@foreach(var service in Model.Services)
 										{
-										<option value="">Виберіть послугу</option>
+										<option value="">@Localizer["Виберіть послугу"]</option>
 											<option value="@service.Name" data-price="@service.Price">@service.Name</option>
 										}
 									</select>
 									<span asp-validation-for="ServiceName" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<input type="text" class="form-control" placeholder="Ціна" asp-for="Price" id="priceInput" readonly>
+									<input type="text" class="form-control" placeholder=@Localizer["Ціна"] asp-for="Price" id="priceInput" readonly>
 									<span asp-validation-for="Price" class="text-danger"></span>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<textarea class="form-control" rows="6" placeholder="Дайте нам більше деталей" asp-for="Description"></textarea>
+									<textarea class="form-control" rows="6" placeholder=@Localizer["Дайте нам більше деталей"] asp-for="Description"></textarea>
 									<span asp-validation-for="Description" class="text-danger"></span>
 								</div>
 								@if (User.Identity.IsAuthenticated)
 								{
 									<div class="form-btn text-center offset-lg-9">
-										<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Зробити замовлення</button>
+										<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Зробити замовлення"]</button>
 									</div>
 								}
 								else
 								{
-									<h3>Війдіть в аккаунт для замовлення </h3>
+									<h3>@Localizer["Війдіть в аккаунт для замовлення"] </h3>
 								}
 							</fieldset>
 						</form>
@@ -108,7 +108,7 @@
 			var price = selectedOption.getAttribute("data-price");
 
 			// Оновлення поля з ціною
-			priceInput.value = price ? price + " грн" : "";
+			priceInput.value = price ? price + @Localizer["грн"] : "";
 		});
 	});
 

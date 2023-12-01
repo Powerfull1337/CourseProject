@@ -53,14 +53,6 @@ namespace CourseProject.Controllers
 		public async Task<IActionResult> Appointments()
 		{
 			var appointments = await crudContext.Appointements.ToListAsync();
-			//var services = await crudContext.Services.ToListAsync();
-
-			//var viewModel = new ServiceAppointmentViewModel // Замініть "YourViewModel" на назву вашого ViewModel
-			//{
-			//	Appointments = appointments,
-			//	Services = services
-			//};
-
 			return View(appointments);
 		}
 
@@ -73,6 +65,7 @@ namespace CourseProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(AddAppointmentViewModel addAppointmentRequest)
 		{
+
 			if (ModelState.IsValid)
 			{
 				var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

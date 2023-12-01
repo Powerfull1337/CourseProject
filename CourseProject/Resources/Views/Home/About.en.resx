@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Відкритий у 2005 році, наш барбершоп став результатом глибокої страсті до традиційного чоловічого стрижка та бажання подарувати нашим клієнтам найкращий досвід. З перших днів нашої діяльності ми віддавали перевагу високій якості послуг та відмінному обслуговуванню." xml:space="preserve">
+    <value>Opened in 2005, our barbershop was the result of a deep passion for traditional men's haircuts and a desire to give our clients the best experience possible. From the very first days of our business, we have been committed to high quality and excellent service.</value>
+  </data>
+  <data name="Вражаючий інтер'єр" xml:space="preserve">
+    <value>Impressive interior</value>
+  </data>
+  <data name="Головна" xml:space="preserve">
+    <value>Main page</value>
+  </data>
+  <data name="З роками ми розвивалися та вдосконалювалися, завжди долаючи виклики, які ставали на нашому шляху. Наші барбери завжди були на передових рубежах моди та технології стрижки, завдяки чому ми завоювали велику кількість вдячних клієнтів і найвищі нагороди у галузі." xml:space="preserve">
+    <value>Over the years, we have evolved and improved, always overcoming the challenges that have come our way. Our barbers have always been at the forefront of fashion and haircutting technology, which has earned us a large number of loyal customers and the highest awards in the industry.</value>
+  </data>
+  <data name="Консультація у майстра" xml:space="preserve">
+    <value>Consultation with a master</value>
+  </data>
+  <data name="Ласкаво просимо до нашого барбершопу! Наш барбершоп - це місце, де історія зустрічається з сучасністю, де класика поєднується з інноваціями." xml:space="preserve">
+    <value>Welcome to our barbershop! Our barbershop is a place where history meets modernity, where classic meets innovation.</value>
+  </data>
+  <data name="Ми завжди готові прийняти вас в нашому барбершопі. Запишіться на стрижку, приходьте, і ми з радістю допоможемо вам виглядати і відчувати себе найкраще. Будь-які запитання або побажання? Не соромтесь зв'язатися з нами за телефоном або електронною поштою - ми завжди на зв'язку." xml:space="preserve">
+    <value>We are always ready to receive you in our barbershop. Make an appointment for a haircut, come and we will be happy to help you look and feel your best. Do you have any questions or suggestions? Feel free to contact us by phone or email - we are always in touch.</value>
+  </data>
+  <data name="Ми на карті" xml:space="preserve">
+    <value>We are on the map</value>
+  </data>
+  <data name="Ми пишаємося тим, що створили не просто місце для стрижки, але і спільноту чоловіків, які дбають про свій зовнішній вигляд та відчуття стилю. Ми завжди відкриті для нових знайомств та обміну досвідом. Завітайте до нас, і ви обов'язково знайдете друзів, які розділяють вашу любов до гарної зачіски та чоловічого стилю." xml:space="preserve">
+    <value>We are proud to have created not just a place for haircuts, but also a community of men who care about their appearance and sense of style. We are always open to new acquaintances and sharing experiences. Visit us and you will definitely find friends who share your love of good hair and men's style.</value>
+  </data>
+  <data name="Наш барбершоп - це місце, де ми створюємо стиль та самовираз кожного клієнта. Ми віримо, що кожна зачіска може бути творчим шедевром, а кожен клієнт - унікальною історією. Наша команда пристрасних фахівців присвячена не просто роботі, а мистецтву, і завжди тут, щоб допомогти вам виглядати найкращим.&#xD;&#xA;Ми розуміємо, що важливо не лише відмінно виглядати, але і почувати себе комфортно під час візиту до нашого закладу. Наша атмосфера сповнена тепла та доброзичливості, що допомагає нашим клієнтам розслабитися та розкрити свій справжній потенціал." xml:space="preserve">
+    <value>Our barbershop is a place where we create the style and self-expression of each client. We believe that every hairstyle can be a creative masterpiece, and every client can tell a unique story. Our team of passionate professionals is dedicated not just to work, but to art, and is always here to help you look your best.
+We understand that it is important not only to look great, but also to feel comfortable during your visit to our establishment. Our atmosphere is full of warmth and friendliness, which helps our clients to relax and reach their true potential.</value>
+  </data>
+  <data name="Наш барбершоп - це місце, де ми створюємо стиль та самовираз кожного клієнта. Ми віримо, що кожна зачіска може бути творчим шедевром, а кожен клієнт - унікальною історією. Наша команда пристрасних фахівців присвячена не просто роботі, а мистецтву, і завжди тут, щоб допомогти вам виглядати найкращим.Ми розуміємо, що важливо не лише відмінно виглядати, але і почувати себе комфортно під час візиту до нашого закладу. Наша атмосфера сповнена тепла та доброзичливості, що допомагає нашим клієнтам розслабитися та розкрити свій справжній потенціал." xml:space="preserve">
+    <value>Our barbershop is a place where we create the style and self-expression of each client. We believe that every hairstyle can be a creative masterpiece, and every client has a unique story to tell. Our team of passionate professionals is dedicated not just to work, but to art, and is always here to help you look your best.We understand that it is important not only to look great, but also to feel comfortable during your visit to our salon. Our atmosphere is full of warmth and friendliness, which helps our clients to relax and reach their true potential.</value>
+  </data>
+  <data name="Наші досвідчені майстри володіють вищим рівнем майстерності і завжди готові відповісти на всі ваші побажання щодо зачіски, стрижки або гоління. Ми використовуємо найсучасніше обладнання та продукти для догляду за волоссям і волоссям обличчя, щоб забезпечити найкращі результати.&#xD;&#xA;Ми не просто стригаємо волосся - ми створюємо шедеври, які підкреслять ваш стиль і впевненість. Ми докладаємо всіх зусиль, щоб зробити кожен візит до нас особливим і незабутнім. Наша місія - зробити вас щасливими, впевненими в собі та завжди готовими до нових викликів." xml:space="preserve">
+    <value>Our experienced masters have the highest level of skill and are always ready to answer all your hairstyle, haircut or shaving needs. We use the most advanced equipment and products for hair and facial care to ensure the best results.
+We don't just cut hair - we create masterpieces that will enhance your style and confidence. We make every effort to make every visit to us special and unforgettable. Our mission is to make you happy, confident and always ready for new challenges.</value>
+  </data>
+  <data name="Наші досвідчені майстри володіють вищим рівнем майстерності і завжди готові відповісти на всі ваші побажання щодо зачіски, стрижки або гоління. Ми використовуємо найсучасніше обладнання та продукти для догляду за волоссям і волоссям обличчя, щоб забезпечити найкращі результати.Ми не просто стригаємо волосся - ми створюємо шедеври, які підкреслять ваш стиль і впевненість. Ми докладаємо всіх зусиль, щоб зробити кожен візит до нас особливим і незабутнім. Наша місія - зробити вас щасливими, впевненими в собі та завжди готовими до нових викликів." xml:space="preserve">
+    <value>Our experienced masters have the highest level of skill and are always ready to answer all your hairstyle, haircut or shaving needs. We use state-of-the-art equipment and products for hair and facial care to ensure the best results.We don't just cut hair - we create masterpieces that will enhance your style and confidence. We make every effort to make every visit to us special and unforgettable. Our mission is to make you happy, confident and always ready for new challenges.</value>
+  </data>
+  <data name="Наша задача" xml:space="preserve">
+    <value>Our task</value>
+  </data>
+  <data name="Про нас" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="Стильний дизайн" xml:space="preserve">
+    <value>Stylish design</value>
+  </data>
+  <data name="Сучасний дизайн" xml:space="preserve">
+    <value>Modern design</value>
+  </data>
+  <data name="У нашому барбершопі ми прагнемо надати нашим клієнтам не лише стрижку і гоління, але й незабутній досвід, який запам'ятається надовго. Наша місія - відновити справжнє мистецтво чоловічого грумінгу і створити комфортну атмосферу, де кожен чоловік може відчути себе особливим.&#xD;&#xA;Ми віримо, що догляд за власною зовнішністю - це не просто ритуал, а спосіб виразити свою індивідуальність і самовираження. Тому ми працюємо, щоб кожен наш клієнт виглядав і почувався найкращим способом." xml:space="preserve">
+    <value>At our barbershop, we strive to provide our clients with not only a haircut and shave, but also an unforgettable experience that will be remembered for a long time. Our mission is to restore the true art of men's grooming and create a comfortable atmosphere where every man can feel special.
+We believe that caring for your own appearance is not just a ritual, but a way to express your individuality and self-expression. That's why we work to make each of our clients look and feel their best.</value>
+  </data>
+  <data name="У нашому барбершопі ми прагнемо надати нашим клієнтам не лише стрижку і гоління, але й незабутній досвід, який запам'ятається надовго. Наша місія - відновити справжнє мистецтво чоловічого грумінгу і створити комфортну атмосферу, де кожен чоловік може відчути себе особливим.Ми віримо, що догляд за власною зовнішністю - це не просто ритуал, а спосіб виразити свою індивідуальність і самовираження. Тому ми працюємо, щоб кожен наш клієнт виглядав і почувався найкращим способом." xml:space="preserve">
+    <value>At our barbershop, we strive to provide our clients with not only a haircut and shave, but also an unforgettable experience that will be remembered for a long time. Our mission is to restore the true art of men's grooming and create a comfortable atmosphere where every man can feel special. We believe that taking care of your own appearance is not just a ritual, but a way to express your individuality and self-expression. That's why we work to make each of our clients look and feel their best.</value>
+  </data>
+  <data name="Чому ми?" xml:space="preserve">
+    <value>Why we are?</value>
+  </data>
+</root>

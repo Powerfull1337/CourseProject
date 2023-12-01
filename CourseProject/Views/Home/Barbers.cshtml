@@ -12,12 +12,12 @@
 						</div>
 
 						<div class="title--heading">
-							<h1>Наші Барбери</h1>
+							<h1>@Localizer["Наші барбери"]</h1>
 						</div>
 						<div class="clearfix"></div>
 
 						<ol class="breadcrumb">
-							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Головна</a></li>
+							<li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Головна"]</a></li>
 							<li class="active"></li>
 						</ol>
 
@@ -32,17 +32,17 @@
 		<div class="container">
 			<div class="section-title row text-center">
 				<div class="col-md-8 offset-md-2">
-					<small>Познайомтесь з нашою командою</small>
-					<h3>Наші барбери</h3>
+					<small>@Localizer["Познайомтесь з нашою командою"]</small>
+					<h3>@Localizer["Наші барбери"]</h3>
 				</div>
 			</div><!-- end title -->
 
 			<div class="row dev-list text-center">
 
 				@foreach (var employee in Model)
-                {
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-					<div class="widget our-inner-taem clearfix">
+				{
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+						<div class="widget our-inner-taem clearfix">
 						<div class="t-top"></div>
 						<div class="hover-br">
 							<img src="~/@employee.Image" alt="" class="img-responsive">
@@ -56,7 +56,7 @@
 							</div>
 						</div>
 						<div class="widget-title">
-							<h3>@employee.Name</h3>
+								<h3>@Localizer[employee.Name]</h3>
 								<small>@employee.Department</small>
 						</div>
 						<!-- end title -->
