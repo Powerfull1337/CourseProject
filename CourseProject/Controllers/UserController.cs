@@ -9,16 +9,17 @@ using CourseProject.Models.ViewModel;
 
 namespace CourseProject.Controllers
 {
-	public class UserController : Controller
-	{
-		private readonly CRUDContext crudContext;
+    public class UserController : Controller
+    {
+        private readonly CRUDContext crudContext;
         private readonly UserManager<ApplicationUser> userManager;
-        public UserController(CRUDContext crudContext, UserManager<ApplicationUser> userManager)
-		{
-			this.crudContext = crudContext;
-            this.userManager = userManager;
 
+        public UserController(CRUDContext crudContext, UserManager<ApplicationUser> userManager)
+        {
+            this.crudContext = crudContext;
+            this.userManager = userManager;
         }
+
         [HttpGet]
         public async Task<IActionResult> UserAccounts(Guid id)
         {
@@ -32,41 +33,43 @@ namespace CourseProject.Controllers
                     Name = user.Name,
                     Email = user.Email,
                     Username = user.UserName,
-
-
+                    Role = "user"
                 };
-                return await Task.Run(() => View("UserAccounts", viewModel));
+                return View("UserAccounts", viewModel);
             }
 
             return RedirectToAction("UserAccounts");
         }
+
         [HttpPost]
         public async Task<IActionResult> UserAccounts(UpdateUserViewModel model)
         {
-            var user = await crudContext.Users.FindAsync(model.Id);
+            var user = await userManager.FindByIdAsync(model.Id.ToString());
 
             if (user != null)
             {
                 user.Name = model.Name;
                 user.Email = model.Email;
-                await crudContext.SaveChangesAsync();
+                user.UserName = model.Username;
+                user.PasswordHash = userManager.PasswordHasher.HashPassword(user, model.Password);
                 model.Role = "user";
-                return RedirectToAction("UserAccounts");
+                await userManager.UpdateAsync(user);
+
+                return RedirectToAction("Index", "Home");
             }
+
             return RedirectToAction("UserAccounts");
         }
-    
-
 
         [HttpGet]
-		public async Task<IActionResult> UserAppointments()
-		{
-			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-			var appointments = await crudContext.Appointements
-				.Where(a => a.UserId == userId)  
-				.ToListAsync();
+        public async Task<IActionResult> UserAppointments()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var appointments = await crudContext.Appointements
+                .Where(a => a.UserId == userId)
+                .ToListAsync();
 
-			return View(appointments);
-		}
-	}
+            return View(appointments);
+        }
+    }
 }

@@ -20,8 +20,6 @@ namespace CourseProject.Models.ViewModel
 "Мінімальна довжина 6 і має містити 1 великий регістр, 1 нижній регістр, 1 спеціальний символ і 1 цифру")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Повторіть пароль, пітвердження обов'язкове")]
-
-        public string PasswordConfirm { get; set; }
         public string? Role { get; set; }
     }
 }

@@ -117,22 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Авторизація" xml:space="preserve">
-    <value>Login</value>
+  <data name="Ім'я" xml:space="preserve">
+    <value>Ім'я</value>
   </data>
-  <data name="Введіть дані для авторизації" xml:space="preserve">
-    <value>Enter your authorisation details</value>
+  <data name="Ваші замовлення" xml:space="preserve">
+    <value>Ваші замовлення</value>
   </data>
   <data name="Головна" xml:space="preserve">
-    <value>Main page</value>
+    <value>Головна</value>
+  </data>
+  <data name="Зберегти дані" xml:space="preserve">
+    <value>Зберегти дані</value>
   </data>
   <data name="Логін" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="Немає акаунту? Зареєструйтесь" xml:space="preserve">
-    <value>Not a user? Signup</value>
+    <value>Логін</value>
   </data>
   <data name="Пароль" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
+  </data>
+  <data name="Профіль" xml:space="preserve">
+    <value>Профіль</value>
   </data>
 </root>
