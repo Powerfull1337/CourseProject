@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ім'я" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="Відкритий у 2005 році, наш барбершоп став результатом глибокої страсті до традиційного чоловічого стрижка та бажання подарувати нашим клієнтам найкращий досвід. З перших днів нашої діяльності ми віддавали перевагу високій якості послуг та відмінному обслуговуванню." xml:space="preserve">
     <value>Opened in 2005, our barbershop was the result of a deep passion for traditional men's haircuts and a desire to give our clients the best experience possible. From the very first days of our business, we have been committed to high quality and excellent service.</value>
+  </data>
+  <data name="Відправити" xml:space="preserve">
+    <value>Send question</value>
   </data>
   <data name="Вражаючий інтер'єр" xml:space="preserve">
     <value>Impressive interior</value>
@@ -126,8 +132,14 @@
   <data name="Головна" xml:space="preserve">
     <value>Main page</value>
   </data>
+  <data name="Дайте нам більше деталей" xml:space="preserve">
+    <value>Give us more details</value>
+  </data>
   <data name="З роками ми розвивалися та вдосконалювалися, завжди долаючи виклики, які ставали на нашому шляху. Наші барбери завжди були на передових рубежах моди та технології стрижки, завдяки чому ми завоювали велику кількість вдячних клієнтів і найвищі нагороди у галузі." xml:space="preserve">
     <value>Over the years, we have evolved and improved, always overcoming the challenges that have come our way. Our barbers have always been at the forefront of fashion and haircutting technology, which has earned us a large number of loyal customers and the highest awards in the industry.</value>
+  </data>
+  <data name="Звязатись з нами" xml:space="preserve">
+    <value>Contact us</value>
   </data>
   <data name="Консультація у майстра" xml:space="preserve">
     <value>Consultation with a master</value>
@@ -169,6 +181,9 @@ We don't just cut hair - we create masterpieces that will enhance your style and
   </data>
   <data name="Сучасний дизайн" xml:space="preserve">
     <value>Modern design</value>
+  </data>
+  <data name="Телефон" xml:space="preserve">
+    <value>Phone</value>
   </data>
   <data name="У нашому барбершопі ми прагнемо надати нашим клієнтам не лише стрижку і гоління, але й незабутній досвід, який запам'ятається надовго. Наша місія - відновити справжнє мистецтво чоловічого грумінгу і створити комфортну атмосферу, де кожен чоловік може відчути себе особливим.&#xD;&#xA;Ми віримо, що догляд за власною зовнішністю - це не просто ритуал, а спосіб виразити свою індивідуальність і самовираження. Тому ми працюємо, щоб кожен наш клієнт виглядав і почувався найкращим способом." xml:space="preserve">
     <value>At our barbershop, we strive to provide our clients with not only a haircut and shave, but also an unforgettable experience that will be remembered for a long time. Our mission is to restore the true art of men's grooming and create a comfortable atmosphere where every man can feel special.

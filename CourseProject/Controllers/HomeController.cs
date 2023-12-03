@@ -28,7 +28,21 @@ namespace CourseProject.Controllers
         {
             return View();
         }
-
+		[HttpPost]
+		public async Task<IActionResult> About(AddQuestionViewModel addQuestionRequest)
+		{
+			var question = new Question()
+			{
+				Id = Guid.NewGuid(),
+				Name = addQuestionRequest.Name,
+				Email = addQuestionRequest.Email,
+				Phone = addQuestionRequest.Phone,
+				Description = addQuestionRequest.Description,
+			};
+			await crudContext.Questions.AddAsync(question);
+			await crudContext.SaveChangesAsync();
+			return RedirectToAction("Index");
+		}
 		public IActionResult Services()
 		{
 			return View();
