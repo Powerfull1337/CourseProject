@@ -29,7 +29,6 @@ public class LanguageMiddleware
 
         await _next(context);
     }
-
     private void SetCulture(HttpContext context, CultureInfo culture)
     {
         System.Threading.Thread.CurrentThread.CurrentCulture = culture;

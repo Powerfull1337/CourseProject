@@ -53,6 +53,7 @@
     <header class="top-navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
+                <a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="em-ribbon" style="position: fixed; left:0; top:0; width: 90px; height: 90px; background: url('http://stfalcon.github.io/stopwar/img/stop-war-in-ukraine.png'); z-index: 10000; border: 0;" title="Do something to stop this war! Russians are killing our children and civilians!" target="_blank"></a>
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                     <img src="~/images/logo.png" alt="" />
                 </a>
@@ -68,15 +69,7 @@
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">@Localizer["Про нас"]</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Barbers">@Localizer["Команда"]</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointment">@Localizer["Замовлення"]</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @Thread.CurrentThread.CurrentUICulture.Name
-                            </a>
-                            <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/?culture=uk">Ukraine</a></li>
-                                <li><a class="dropdown-item" href="/?culture=en">Engilsh</a></li>
-                            </ul>
-                        </li>
+                       
 
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -97,6 +90,18 @@
                         {
                             <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Login">@Localizer["Логін"]</a></li>
                         }
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @Thread.CurrentThread.CurrentUICulture.Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item black-text" href="/?culture=uk">Ukraine</a></li>
+                                <li><a class="dropdown-item black-text" href="/?culture=en">English</a></li>
+
+                            </ul>
+                        </li>
+
+
                         @*
 
                         <li class="main-button"><a href="/UserAuthentication/Login">Sign Up</a></li>
@@ -126,12 +131,11 @@
                 <div class="footer-distributed">
                     <div class="footer-left">
                         <p class="footer-links">
-@*                          <a href="#">Home</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">About</a>
-                            <a href="#">Faq</a>
-                            <a href="#">Contact</a> *@
+                         <a href="#">Головна</a>
+                            <a href="#">Послуги</a>
+                            <a href="#">Про нас</a>
+                            <a href="#">Команда</a>
+                            <a href="#">Замовлення</a>
                         </p>
                         <p class="footer-company-name">All Rights Reserved. &copy; 2023 Денис</p>
                     </div>
@@ -146,3 +150,10 @@
 
 </body>
 </html>
+
+<style>
+    .nav-item .black-text {
+        color: black !important;
+    }
+
+</style>

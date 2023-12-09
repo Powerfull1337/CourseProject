@@ -6,6 +6,16 @@
 <h1>Замовлення</h1>
 
 <div class="container">
+    <div class="row mb-3">
+        <div class="col-lg-12">
+            <form onsubmit="return searchOnPage()">
+                <div class="form-group">
+                    <input type="text" id="searchTerm" class="form-control" placeholder="Пошук...">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Пошук</button>
+            </form>
+        </div>
+    </div>
     <div class="pb-3">
         <table class="table">
             <thead>
@@ -14,26 +24,26 @@
                     <th> Ім'я</th>
                     <th> Email</th>
                     <th> Телефон</th>
-                    <th> Послуга </th>
-                    <th> Ціна </th>
-                    <th> Час </th>
-                    <th> Дата </th>
+                    <th style="min-width: 200px;"> Послуга </th>
+                    <th style="min-width: 100px;"> Ціна </th>
+                    <th style ="min-width: 100px;"> Час </th>
+                    <th style="min-width: 110px;"> Дата </th>
                     <th> Опис</th>
-                    <th></th>
+                    <th>Дія</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var appointment in Model)
                 {
-                    <tr>
+                    <tr class="searchable">
                         <td>@appointment.Id</td>
                         <td>@appointment.FirstName</td>
                         <td>@appointment.Email</td>
                         <td>@appointment.Phone</td>
-                        <td>@appointment.Price</td>
-                        <td>@appointment.TimeOfBook.ToString("HH:mm:ss")</td>
-                        <td>@appointment.ServiceName</td>
-                        <td>@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
+                        <td style="min-width: 200px;">@appointment.ServiceName</td>
+                        <td style="min-width: 100px;">@appointment.Price</td>
+                        <td style="min-width: 100px;">@appointment.TimeOfBook.ToString("HH:mm:ss")</td>
+                        <td style="min-width:110px;">@appointment.DateOfBook.ToString("dd-MM-yyyy")</td>
                         <td>@appointment.Description</td>
                         <td> <button onclick="location.href='PreviewAppointment/@appointment.Id'" class="btn btn-primary">Перегляд</button></td>
                     </tr>
@@ -42,18 +52,37 @@
         </table>
     </div>
 </div>
+<script>
+    function searchOnPage() {
+        var searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+        var elements = document.querySelectorAll('.searchable');
+
+        for (var i = 0; i < elements.length; i++) {
+            var content = elements[i].textContent.toLowerCase();
+            if (content.includes(searchTerm)) {
+                elements[i].style.display = "";
+            } else {
+                elements[i].style.display = "none";
+            }
+        }
+
+        return false;
+    }
+</script>
+
 <style>
     h1 {
         margin-top: 30px;
     }
 
     .container {
-        padding-left: 5px; /* Adjust the left padding as needed */
-        padding-right: 5px; /* Adjust the right padding as needed */
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     table {
-        width: 900px;
+        /* width: 900px; */
+        margin: 0;
         font-family: sans-serif;
         font-weight: 100;
         border-collapse: collapse;
@@ -63,17 +92,17 @@
 
     th,
     td {
-        background-color: #ffffff33;
-        padding: 15px;
-        /*     color: #fff; */
+        padding: 10px;
+        border: 1px solid #ddd;
     }
 
     thead th {
         background-color: #55608f;
+        color: #fff;
     }
 
     tbody tr:hover {
-        background-color: #ffffff4d
+        background-color: #f5f5f5;
     }
 
     tbody td {
@@ -83,7 +112,7 @@
         tbody td:hover:before {
             content: "";
             position: absolute;
-            background-color: #ffffff33;
+            background-color: #f5f5f5;
             left: 0;
             right: 0;
             top: -9999px;
