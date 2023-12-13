@@ -46,7 +46,7 @@ namespace CourseProject.Controllers
             model.Role = "user";
             var result = await this._authService.RegistrationAsync(model);
             TempData["msg"] = result.Message;
-            return RedirectToAction(nameof(Registration));
+            return RedirectToAction("Login", "UserAuthentication");
         }
        // [Authorize]
         public async Task<IActionResult> Logout()

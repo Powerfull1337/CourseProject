@@ -2,7 +2,7 @@
 @using System.Security.Claims
 
 @{
-    Layout = "~/Views/Shared/_OtherLayout.cshtml";
+
 }
 
 @if (User.IsInRole("admin"))
@@ -43,50 +43,82 @@ else
 			</div>
 		</div>
 	</div><!-- end all-page-bar -->
-	<div id="appointment" class="section wb">
+    <div id="appointment" class="section wb">
 		<div class="container">
+                <div class="section-title row text-center">
+                    <div class="col-md-8 offset-md-2">
+                        <small>@Localizer["Ваші замовлення"]</small>
+                        <h3>@Localizer["Натисність для переходу на список замовлень"]</h3>
+                    </div>
+                </div><!-- end title -->
     <div class="row">
         <div class="col-lg-12">
             <div class="contact_form">
+                          
                 <div id="message"></div>
-               <form method="post" action="UserAccounts" class="mt-5">
-                    <fieldset class="row row-fluid">
-               
-                            <span asp-validation-for="Id" class="text-danger"></span>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;">
-                                <input type="text" class="form-control" asp-for="Id">
-                            </div>
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" placeholder=@Localizer["Ім'я"] asp-for="Name">
-
-                            </div>
-                            <span asp-validation-for="Username" class="text-danger"></span>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" placeholder="@Localizer["Логін"]" asp-for="Username" readonly>
+                            <div class="form-btn text-center">
+                                <a asp-controller="User" asp-action="UserAppointments" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Ваші замовлення"]</a>
                             </div>
 
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-122">
-                                <input type="email" class="form-control" placeholder="Email" asp-for="Email">
 
-                            </div>
-
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="password" id="basic" class="form-control" placeholder=@Localizer["Пароль"] asp-for="Password">
-
-                            </div>
-                                <div class="form-btn text-center offset-lg-8">
-                                        <button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Зберегти дані"]</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <div class="form-btn text-center offset-lg-8">
-                        <button asp-controller="User" asp-action="UserAppointments" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Ваші замовлення"]</button>
-                        </div>
+                          
                     </div><!-- end col -->
         </div><!-- end row Have a user? Sign in-->
+    </div>
+        </div>
+    </div>
+	<div id="appointment" class="section wb">
+		<div class="container">
+                <div class="section-title row text-center">
+                    <div class="col-md-8 offset-md-2">
+                        <small>@Localizer["Ваші дані"]</small>
+                        <h3>@Localizer["Можете змінити дані за власним бажанням"]</h3>
+                    </div>
+                </div><!-- end title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="contact_form">
+                          
+                <div id="message"></div>
+                            <form method="post" action="UserAccounts" class="mt-5">
+                                <fieldset class="row row-fluid">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;">
+                                        @* <label asp-for="Id">@Localizer["Id"]</label> *@
+                                        <input type="text" class="form-control" asp-for="Id">
+                                        <span asp-validation-for="Id" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label asp-for="Name">@Localizer["Ім'я"]</label>
+                                        <input type="text" class="form-control" asp-for="Name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label asp-for="Username">@Localizer["Логін"]</label>
+                                        <input type="text" class="form-control" asp-for="Username" readonly>
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label asp-for="Email">Email</label>
+                                        <input type="email" class="form-control" asp-for="Email">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label asp-for="Password">@Localizer["Пароль"]</label>
+                                        <input type="password" id="basic" class="form-control" asp-for="Password">
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-btn text-center offset-lg-8">
+                                        <button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">@Localizer["Зберегти дані"]</button>
+                                    </div>
+                                </fieldset>
+                            </form>   
+                    </div><!-- end col -->
+        </div>
     </div>
         </div>
     </div>

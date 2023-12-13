@@ -120,6 +120,9 @@
   <data name="Ім'я" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Ваші дані" xml:space="preserve">
+    <value>Your data</value>
+  </data>
   <data name="Ваші замовлення" xml:space="preserve">
     <value>Your appointments</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="Логін" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Можете змінити дані за власним бажанням" xml:space="preserve">
+    <value>You can change the data for your own wishes</value>
+  </data>
+  <data name="Натисність для переходу на список замовлень" xml:space="preserve">
+    <value>Click to go to the list of orders</value>
   </data>
   <data name="Пароль" xml:space="preserve">
     <value>Password</value>

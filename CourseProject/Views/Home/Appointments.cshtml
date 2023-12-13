@@ -8,11 +8,10 @@
 <div class="container">
     <div class="row mb-3">
         <div class="col-lg-12">
-            <form onsubmit="return searchOnPage()">
+            <form>
                 <div class="form-group">
-                    <input type="text" id="searchTerm" class="form-control" placeholder="Пошук...">
+                    <input type="text" id="searchTerm" class="form-control" placeholder="Пошук..." oninput="searchOnPage()">
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">Пошук</button>
             </form>
         </div>
     </div>

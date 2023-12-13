@@ -184,7 +184,6 @@
 			</div><!-- end row -->
 		</div><!-- end container -->
 	</div><!-- end section -->
-
 	<div id="pricing" class="section lb">
 		<div class="container">
 			<div class="section-title row text-center">
@@ -193,19 +192,35 @@
 					<h3>@Localizer["Ціни та опис послуг"]</h3>
 				</div>
 			</div><!-- end title -->
-			<div class="row">
-				<div class="col-md-6">
+			@for (int i = 0; i < Model.Count; i += 2)
+			{
+				<div class="row">
+					<div class="col-md-6">
+						<div class="service-wrap text-center clearfix">
+							<div class="uptop">
+								<img src="~/@Model[i].Image" alt="" class="img-responsive img-rounded alignleft">
+							</div>
+							<h4>@Model[i].Name</h4>
+							<p>@Model[i].Description</p>
+						</div><!-- end issue -->
+					</div>
 
-					@foreach (var service in Model)
-                {
-					<div class="service-wrap text-center clearfix">
-						<div class="uptop">
-								<img src="~/@service.Image" alt="" class="img-responsive img-rounded alignleft">
+					@if (i + 1 < Model.Count)
+					{
+						<div class="col-md-6">
+							<div class="service-wrap text-center clearfix">
+								<div class="uptop">
+									<img src="~/@Model[i + 1].Image" alt="" class="img-responsive img-rounded alignleft">
+								</div>
+								<h4>@Model[i + 1].Name</h4>
+								<p>@Model[i + 1].Description</p>
+							</div><!-- end issue -->
 						</div>
-							<h4>@service.Name</h4>
-						<p>@service.Description</p>
-					</div><!-- end issue -->
-				}
+					}
+				</div>
+			}
+		</div>
+	</div>
 
 					@* <div class="service-wrap text-center clearfix">
 						<div class="uptop">
@@ -248,8 +263,8 @@
 						<h4>Миття голови</h4>
 						<p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>
 					</div><!-- end issue --> *@
-				</div><!-- end col -->
-			</div>
+				<!-- end col -->
+		
 		@* 	<div class="row flex-items-xs-middle flex-items-xs-center">
 
 				<!-- Table #1  -->
@@ -330,8 +345,7 @@
 					</div>
 				</div>
 			</div> *@
-		</div>
-	</div>
+	
 
 
 	<div id="barbers" class="section lb">

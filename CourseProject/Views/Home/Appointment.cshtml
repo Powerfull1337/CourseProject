@@ -63,10 +63,10 @@
 									<span asp-validation-for="TimeOfBook" class="text-danger"></span>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-									<select class="form-control" asp-for="ServiceName" placeholder=@Localizer["Виберіть послугу"] id="serviceSelect">
-										@foreach(var service in Model.Services)
+									<select class="form-control" asp-for="ServiceName" id="serviceSelect">
+										<option value="" disabled selected>@Localizer["Виберіть послугу"]</option>
+										@foreach (var service in Model.Services)
 										{
-										<option value="">@Localizer["Виберіть послугу"]</option>
 											<option value="@service.Name" data-price="@service.Price">@service.Name</option>
 										}
 									</select>
@@ -88,7 +88,7 @@
 								}
 								else
 								{
-									<h3>@Localizer["Війдіть в аккаунт для замовлення"] </h3>
+									<a class="text-alert" href="/UserAuthentication/Login">@Localizer["Війдіть в акаунт для замовлення"]</a>
 								}
 							</fieldset>
 						</form>
@@ -108,7 +108,7 @@
 			var price = selectedOption.getAttribute("data-price");
 
 			// Оновлення поля з ціною
-			priceInput.value = price ? price + @Localizer["грн"] : "";
+			priceInput.value = price ? price + " грн" : "";
 		});
 	});
 

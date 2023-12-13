@@ -52,33 +52,29 @@
 								<span asp-validation-for="Name" class="text-danger"></span>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<input type="text" class="form-control" placeholder=@Localizer["Ім'я"] asp-for="Name">
-
 								</div>
 								<span asp-validation-for="Username" class="text-danger"></span>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<input type="text" class="form-control" placeholder=@Localizer["Логін"] asp-for="Username">
-									
 								</div>
 								<span asp-validation-for="Email" class="text-danger"></span>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-122">
 									<input type="email" class="form-control" placeholder="Email" asp-for="Email">
-									
 								</div>
-
 								<span asp-validation-for="Password" class="text-danger"></span>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<input type="password" id="basic" class="form-control" placeholder=@Localizer["Пароль"] asp-for="Password">
-									
 								</div>
 								<span asp-validation-for="PasswordConfirm" class="text-danger"></span>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<input type="password" id="basic" class="form-control" placeholder=@Localizer["Повторіть пароль"] asp-for="PasswordConfirm">
-									
 								</div>
 								@if (TempData["msg"] != null)
 								{
-									<div class="form-group">
-										<span class="text-info">@TempData["msg"]</span>
+									<div class="form-group notification-container">
+										<div class="notification">
+											<span class="text-info">@TempData["msg"]</span>
+										</div>
 									</div>
 								}
 								<div class="form-btn text-center offset-lg-8">
@@ -93,3 +89,20 @@
 		</div><!-- end container -->
 	</div><!-- end section -->
 </div>
+<style>
+	.notification-container {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		width: 300px;
+		z-index: 9999;
+	}
+
+	.notification {
+		background-color: #4CAF50;
+		color: white;
+		padding: 15px;
+		border-radius: 5px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+</style>

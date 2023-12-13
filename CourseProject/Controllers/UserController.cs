@@ -67,9 +67,12 @@ namespace CourseProject.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var appointments = await crudContext.Appointements
                 .Where(a => a.UserId == userId)
+                .OrderBy(a => a.DateOfBook)
+                .ThenBy(a => a.TimeOfBook)
                 .ToListAsync();
 
             return View(appointments);
         }
+
     }
 }

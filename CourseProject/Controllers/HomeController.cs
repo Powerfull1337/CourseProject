@@ -150,9 +150,9 @@ namespace CourseProject.Controllers
                 appointment.Description = model.Description;
                 await crudContext.SaveChangesAsync();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Appointments");
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Appointments");
         }
         [HttpPost]
         public async Task<IActionResult> Delete(UpdateAppointmentViewModel model)

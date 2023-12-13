@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="Ім'я" xml:space="preserve">
     <value>Ім'я</value>
+  </data>
+  <data name="Ваші дані" xml:space="preserve">
+    <value>Ваші дані</value>
   </data>
   <data name="Ваші замовлення" xml:space="preserve">
     <value>Ваші замовлення</value>
@@ -131,6 +137,12 @@
   </data>
   <data name="Логін" xml:space="preserve">
     <value>Логін</value>
+  </data>
+  <data name="Можете змінити дані за власним бажанням" xml:space="preserve">
+    <value>Можете змінити дані за власним бажанням</value>
+  </data>
+  <data name="Натисність для переходу на список замовлень" xml:space="preserve">
+    <value>Натисність для переходу на список замовлень</value>
   </data>
   <data name="Пароль" xml:space="preserve">
     <value>Пароль</value>
