@@ -83,7 +83,7 @@ else
                             <form method="post" action="UserAccounts" class="mt-5">
                                 <fieldset class="row row-fluid">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;">
-                                        @* <label asp-for="Id">@Localizer["Id"]</label> *@
+                     
                                         <input type="text" class="form-control" asp-for="Id">
                                         <span asp-validation-for="Id" class="text-danger"></span>
                                     </div>
@@ -132,8 +132,8 @@ else
     .nav {
         display: flex;
         justify-content: center;
-        align-items: center; /* Center the child elements vertically */
-        height: 100vh; /* Set the height to 100% of the viewport height */
+        align-items: center;
+        height: 100vh;
     }
 
     .admin-link a {

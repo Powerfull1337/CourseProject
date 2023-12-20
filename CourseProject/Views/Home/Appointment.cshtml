@@ -106,8 +106,6 @@
 		serviceSelect.addEventListener("change", function () {
 			var selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
 			var price = selectedOption.getAttribute("data-price");
-
-			// Оновлення поля з ціною
 			priceInput.value = price ? price + " грн" : "";
 		});
 	});
@@ -115,7 +113,7 @@
 	flatpickr("#datePicker", {
 		dateFormat: "Y-m-d",
         enableTime: false,
-        minDate: "today" // Заборонити вибір дати раніше ніж сьогодні
+        minDate: "today" 
     });
 
     flatpickr("#timePicker", {

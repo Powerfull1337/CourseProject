@@ -13,7 +13,6 @@ builder.Services.AddRazorPages()
     .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
     .AddDataAnnotationsLocalization();
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CRUDContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("MvcDemoConnectionString")));

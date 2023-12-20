@@ -84,7 +84,7 @@
                             {
                                 userName = userName.Substring(0, 5) + "...";
                             }
-                                //      <li class="scroll-to-section user-info"><a href="#top">Привіт, @userName</a></li>
+                               
                             <li class="nav-item">
                                 <a class="nav-link" onclick="location.href='@Url.Action("UserAccounts", "User", new { id = User.FindFirstValue(ClaimTypes.NameIdentifier) })'">
                                     @Localizer["Аккаунт"]
@@ -96,21 +96,7 @@
                         {
                             <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="UserAuthentication" asp-action="Login">@Localizer["Логін"]</a></li>
                         }
-                        @*
-
-                        <li class="main-button"><a href="/UserAuthentication/Login">Sign Up</a></li>
-                        <li><a href="/UserAuthentication/Logout">Logout</a></li> *@
-                        @*      @if (User.Identity.IsAuthenticated)
-                        {
-                        @if (User.IsInRole("admin"))
-                        {
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Display">Панель Адміна</a></li>
-                        }
-                        } *@
-
-
-                        @*  <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Appointments">Усі Замовлення</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index">Робітники</a></li> *@
+                       
                     </ul>
                 </div>
             </div>
